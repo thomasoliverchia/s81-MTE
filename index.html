@@ -4,970 +4,421 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NatureAqua PH – Fresh Water Delivered</title>
-
-  <!-- ========== Bootstrap 5 CDN ========== -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <!-- Bootstrap Icons -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    rel="stylesheet"
-  />
-  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- ========== Custom CSS ========== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    /* ─── CSS Variables ──────────────────────────────────────────── */
     :root {
-      --aqua-900: #0a1628;
-      --aqua-800: #0d2040;
-      --aqua-700: #0e3460;
-      --aqua-500: #1a6fb5;
-      --aqua-400: #2591e8;
-      --aqua-300: #5bbcff;
-      --aqua-100: #d6eeff;
-      --aqua-50:  #f0f8ff;
-      --accent:   #00d4ff;
-      --white:    #ffffff;
-      --text-dark:#0a1628;
-      --text-mid: #3a5a78;
-      --text-light:#6b8fa8;
-      --card-bg:  #ffffff;
-      --radius-lg: 20px;
-      --radius-md: 12px;
-      --shadow-card: 0 4px 24px rgba(10,22,40,.10);
+      --aqua-900: #0a1628; --aqua-800: #0d2040; --aqua-700: #0e3460;
+      --aqua-500: #1a6fb5; --aqua-400: #2591e8; --aqua-300: #5bbcff;
+      --aqua-100: #d6eeff; --aqua-50: #f0f8ff; --accent: #00d4ff;
+      --white: #ffffff; --text-dark: #0a1628; --text-mid: #3a5a78;
+      --text-light: #6b8fa8; --card-bg: #ffffff; --radius-lg: 20px;
+      --radius-md: 12px; --shadow-card: 0 4px 24px rgba(10,22,40,.10);
       --shadow-hover: 0 12px 40px rgba(26,111,181,.22);
       --transition: .3s cubic-bezier(.4,0,.2,1);
     }
-
-    /* ─── Base ───────────────────────────────────────────────────── */
     *,*::before,*::after { box-sizing:border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--aqua-50);
-      color: var(--text-dark);
-      overflow-x: hidden;
-    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--aqua-50); color: var(--text-dark); overflow-x: hidden; }
     h1,h2,h3,h4,h5 { font-family: 'Syne', sans-serif; }
 
-    /* ─── Navbar ─────────────────────────────────────────────────── */
-    .navbar {
-      background: rgba(10, 22, 40, 0.97) !important;
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(91,188,255,.15);
-      padding: 14px 0;
-      transition: var(--transition);
-    }
-    .navbar-brand {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: var(--white) !important;
-      letter-spacing: -.5px;
-    }
+    /* Navbar */
+    .navbar { background: rgba(10,22,40,0.97) !important; backdrop-filter: blur(12px); border-bottom: 1px solid rgba(91,188,255,.15); padding: 14px 0; transition: var(--transition); }
+    .navbar-brand { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--white) !important; letter-spacing: -.5px; }
     .navbar-brand span { color: var(--accent); }
-    .navbar-nav .nav-link {
-      color: rgba(255,255,255,.75) !important;
-      font-weight: 500;
-      font-size: .95rem;
-      letter-spacing: .3px;
-      padding: 6px 16px !important;
-      border-radius: 8px;
-      transition: var(--transition);
-    }
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-      color: var(--accent) !important;
-      background: rgba(0,212,255,.08);
-    }
+    .navbar-nav .nav-link { color: rgba(255,255,255,.75) !important; font-weight: 500; font-size: .95rem; padding: 6px 16px !important; border-radius: 8px; transition: var(--transition); }
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active { color: var(--accent) !important; background: rgba(0,212,255,.08); }
     .navbar-toggler { border: 1px solid rgba(255,255,255,.25); }
     .navbar-toggler-icon { filter: invert(1); }
-    .nav-cart-btn {
-      background: var(--aqua-500);
-      color: #fff !important;
-      border-radius: 50px !important;
-      padding: 7px 20px !important;
-      font-weight: 600;
-      transition: var(--transition);
-    }
+    .nav-cart-btn { background: var(--aqua-500); color: #fff !important; border-radius: 50px !important; padding: 7px 20px !important; font-weight: 600; transition: var(--transition); }
     .nav-cart-btn:hover { background: var(--accent); color: var(--aqua-900) !important; }
 
-    /* ─── Hero Section ───────────────────────────────────────────── */
-    #hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background:
-        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,212,255,.12) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 80% at 20% 80%, rgba(26,111,181,.20) 0%, transparent 60%),
-        linear-gradient(160deg, var(--aqua-900) 0%, var(--aqua-800) 55%, #08213e 100%);
-      overflow: hidden;
-      padding: 120px 0 80px;
-    }
+    /* Hero */
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(0,212,255,.12) 0%, transparent 70%), radial-gradient(ellipse 60% 80% at 20% 80%, rgba(26,111,181,.20) 0%, transparent 60%), linear-gradient(160deg, var(--aqua-900) 0%, var(--aqua-800) 55%, #08213e 100%); overflow: hidden; padding: 120px 0 80px; }
+    #hero::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 80px; background: var(--aqua-50); clip-path: ellipse(55% 100% at 50% 100%); }
+    .hero-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .35; pointer-events: none; }
+    .blob-1 { width: 500px; height: 500px; background: var(--aqua-500); top: -100px; right: -100px; animation: blobFloat 8s ease-in-out infinite alternate; }
+    .blob-2 { width: 320px; height: 320px; background: var(--accent); bottom: 60px; left: -60px; animation: blobFloat 11s ease-in-out infinite alternate-reverse; }
+    @keyframes blobFloat { from { transform: translateY(0) scale(1); } to { transform: translateY(-40px) scale(1.08); } }
+    .hero-badge { display: inline-block; background: rgba(0,212,255,.15); border: 1px solid rgba(0,212,255,.35); color: var(--accent); font-size: .8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; }
+    .hero-headline { font-size: clamp(2.6rem, 6vw, 5rem); font-weight: 800; color: var(--white); line-height: 1.05; margin-bottom: 24px; letter-spacing: -1.5px; }
+    .hero-headline .highlight { background: linear-gradient(90deg, var(--accent), var(--aqua-300)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-tagline { font-size: 1.15rem; color: rgba(255,255,255,.65); max-width: 480px; line-height: 1.7; margin-bottom: 40px; }
+    .btn-hero-primary { background: linear-gradient(135deg, var(--aqua-500), var(--accent)); border: none; color: var(--white); font-weight: 700; font-size: 1rem; padding: 16px 36px; border-radius: 50px; box-shadow: 0 8px 32px rgba(0,212,255,.30); transition: var(--transition); }
+    .btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,212,255,.45); color: var(--white); }
+    .btn-hero-secondary { background: transparent; border: 1.5px solid rgba(255,255,255,.30); color: rgba(255,255,255,.85); font-weight: 600; font-size: 1rem; padding: 15px 36px; border-radius: 50px; transition: var(--transition); }
+    .btn-hero-secondary:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,.08); }
+    .hero-stats { display: flex; gap: 40px; margin-top: 56px; flex-wrap: wrap; }
+    .stat-item .stat-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.8rem; color: var(--white); line-height: 1; }
+    .stat-item .stat-label { font-size: .8rem; color: rgba(255,255,255,.5); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+    .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; height: 480px; }
+    .bottle-wrap { position: relative; animation: bottleFloat 4s ease-in-out infinite; }
+    @keyframes bottleFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+    .bottle-glow { position: absolute; width: 240px; height: 240px; background: radial-gradient(circle, rgba(0,212,255,.35) 0%, transparent 70%); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); filter: blur(20px); }
+    .hero-bottle-img { width: 160px; filter: drop-shadow(0 24px 48px rgba(0,212,255,.5)); position: relative; z-index: 1; }
 
-    /* Animated water wave at bottom */
-    #hero::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 80px;
-      background: var(--aqua-50);
-      clip-path: ellipse(55% 100% at 50% 100%);
-    }
-
-    /* Floating blobs */
-    .hero-blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: .35;
-      pointer-events: none;
-    }
-    .blob-1 {
-      width: 500px; height: 500px;
-      background: var(--aqua-500);
-      top: -100px; right: -100px;
-      animation: blobFloat 8s ease-in-out infinite alternate;
-    }
-    .blob-2 {
-      width: 320px; height: 320px;
-      background: var(--accent);
-      bottom: 60px; left: -60px;
-      animation: blobFloat 11s ease-in-out infinite alternate-reverse;
-    }
-    @keyframes blobFloat {
-      from { transform: translateY(0) scale(1); }
-      to   { transform: translateY(-40px) scale(1.08); }
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(0,212,255,.15);
-      border: 1px solid rgba(0,212,255,.35);
-      color: var(--accent);
-      font-size: .8rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 50px;
-      margin-bottom: 24px;
-    }
-    .hero-headline {
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      font-weight: 800;
-      color: var(--white);
-      line-height: 1.05;
-      margin-bottom: 24px;
-      letter-spacing: -1.5px;
-    }
-    .hero-headline .highlight {
-      background: linear-gradient(90deg, var(--accent), var(--aqua-300));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-tagline {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,.65);
-      max-width: 480px;
-      line-height: 1.7;
-      margin-bottom: 40px;
-    }
-    .btn-hero-primary {
-      background: linear-gradient(135deg, var(--aqua-500), var(--accent));
-      border: none;
-      color: var(--white);
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 16px 36px;
-      border-radius: 50px;
-      letter-spacing: .4px;
-      box-shadow: 0 8px 32px rgba(0,212,255,.30);
-      transition: var(--transition);
-    }
-    .btn-hero-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 48px rgba(0,212,255,.45);
-      color: var(--white);
-    }
-    .btn-hero-secondary {
-      background: transparent;
-      border: 1.5px solid rgba(255,255,255,.30);
-      color: rgba(255,255,255,.85);
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 15px 36px;
-      border-radius: 50px;
-      transition: var(--transition);
-    }
-    .btn-hero-secondary:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(0,212,255,.08);
-    }
-
-    /* Hero stats strip */
-    .hero-stats {
-      display: flex;
-      gap: 40px;
-      margin-top: 56px;
-      flex-wrap: wrap;
-    }
-    .stat-item .stat-num {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.8rem;
-      color: var(--white);
-      line-height: 1;
-    }
-    .stat-item .stat-label {
-      font-size: .8rem;
-      color: rgba(255,255,255,.5);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-
-    /* Hero bottle illustration (pure CSS) */
-    .hero-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 480px;
-    }
-    .bottle-wrap {
-      position: relative;
-      animation: bottleFloat 4s ease-in-out infinite;
-    }
-    @keyframes bottleFloat {
-      0%,100% { transform: translateY(0); }
-      50%      { transform: translateY(-18px); }
-    }
-    .bottle-glow {
-      position: absolute;
-      width: 240px; height: 240px;
-      background: radial-gradient(circle, rgba(0,212,255,.35) 0%, transparent 70%);
-      border-radius: 50%;
-      top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
-      filter: blur(20px);
-    }
-    .hero-bottle-img {
-      width: 160px;
-      filter: drop-shadow(0 24px 48px rgba(0,212,255,.5));
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ─── Section Headings ───────────────────────────────────────── */
-    .section-label {
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--aqua-500);
-      display: block;
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-size: clamp(1.9rem, 4vw, 2.8rem);
-      font-weight: 800;
-      color: var(--text-dark);
-      line-height: 1.15;
-      letter-spacing: -1px;
-      margin-bottom: 12px;
-    }
-    .section-sub {
-      color: var(--text-light);
-      font-size: 1rem;
-      max-width: 480px;
-    }
+    /* Section headings */
+    .section-label { font-size: .75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--aqua-500); display: block; margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; color: var(--text-dark); line-height: 1.15; letter-spacing: -1px; margin-bottom: 12px; }
+    .section-sub { color: var(--text-light); font-size: 1rem; max-width: 480px; }
     section { padding: 80px 0; }
 
-    /* ─── Category Filters ───────────────────────────────────────── */
-    .filter-btn {
-      background: var(--white);
-      border: 1.5px solid rgba(26,111,181,.18);
-      color: var(--text-mid);
-      font-weight: 500;
-      font-size: .875rem;
-      padding: 8px 20px;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--aqua-500);
-      border-color: var(--aqua-500);
-      color: var(--white);
-      box-shadow: 0 4px 16px rgba(26,111,181,.25);
-    }
+    /* ── CAROUSEL SECTION ── */
+    #hero-carousel { background: var(--aqua-900); padding: 0; }
+    .main-carousel { position: relative; }
+    .main-carousel .carousel-item { min-height: 420px; display: flex; align-items: center; }
+    .carousel-slide-inner { padding: 60px 0; }
+    .carousel-slide-inner .slide-label { font-size: .72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: block; }
+    .carousel-slide-inner h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--white); line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; }
+    .carousel-slide-inner p { color: rgba(255,255,255,.65); font-size: 1rem; line-height: 1.7; max-width: 440px; margin-bottom: 28px; }
+    .carousel-slide-inner .btn-slide { background: linear-gradient(135deg, var(--aqua-500), var(--accent)); border: none; color: var(--white); font-weight: 700; padding: 13px 30px; border-radius: 50px; font-size: .95rem; transition: var(--transition); }
+    .carousel-slide-inner .btn-slide:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,212,255,.35); color: var(--white); }
+    .carousel-visual { display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
+    .carousel-bottle { animation: bottleFloat 4s ease-in-out infinite; filter: drop-shadow(0 16px 40px rgba(0,212,255,.4)); width: 130px; }
+    .carousel-indicators [data-bs-target] { width: 10px; height: 10px; border-radius: 50%; background-color: rgba(255,255,255,.4); border: none; }
+    .carousel-indicators .active { background-color: var(--accent); }
+    .carousel-control-prev-icon, .carousel-control-next-icon { filter: none; }
+    .carousel-control-prev, .carousel-control-next { width: 48px; height: 48px; top: 50%; transform: translateY(-50%); border-radius: 50%; background: rgba(255,255,255,.10); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.15); margin: 0 12px; opacity: 1; transition: var(--transition); }
+    .carousel-control-prev:hover, .carousel-control-next:hover { background: var(--aqua-500); }
+    .slide-bg-1 { background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(26,111,181,.20) 0%, transparent 70%), linear-gradient(160deg, var(--aqua-900) 0%, #07233e 100%); }
+    .slide-bg-2 { background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(22,163,74,.15) 0%, transparent 70%), linear-gradient(160deg, #061a0e 0%, #0a1628 100%); }
+    .slide-bg-3 { background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(220,38,38,.15) 0%, transparent 70%), linear-gradient(160deg, #1a0606 0%, #0a1628 100%); }
+    .slide-bg-4 { background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(217,119,6,.15) 0%, transparent 70%), linear-gradient(160deg, #1a1006 0%, #0a1628 100%); }
 
-    /* ─── Product Cards ──────────────────────────────────────────── */
-    .product-card {
-      background: var(--card-bg);
-      border: 1px solid rgba(26,111,181,.09);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-card);
-      transition: var(--transition);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(26,111,181,.25);
-    }
-    .card-img-wrap {
-      background: linear-gradient(135deg, var(--aqua-100) 0%, #e8f5ff 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 20px;
-      position: relative;
-      min-height: 200px;
-      overflow: hidden;
-    }
-    .card-img-wrap::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 60% 40%, rgba(91,188,255,.25) 0%, transparent 65%);
-    }
-    /* Bottle SVG illustrations embedded as background */
-    .bottle-icon {
-      width: 80px;
-      height: 140px;
-      position: relative;
-      z-index: 1;
-      filter: drop-shadow(0 8px 20px rgba(26,111,181,.25));
-      transition: var(--transition);
-    }
-    .product-card:hover .bottle-icon { transform: scale(1.06); }
+    /* Filter buttons */
+    .filter-btn { background: var(--white); border: 1.5px solid rgba(26,111,181,.18); color: var(--text-mid); font-weight: 500; font-size: .875rem; padding: 8px 20px; border-radius: 50px; cursor: pointer; transition: var(--transition); white-space: nowrap; }
+    .filter-btn:hover, .filter-btn.active { background: var(--aqua-500); border-color: var(--aqua-500); color: var(--white); box-shadow: 0 4px 16px rgba(26,111,181,.25); }
 
-    .card-badge-brand {
-      position: absolute;
-      top: 12px; left: 12px;
-      font-size: .7rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 50px;
-    }
-    .badge-pacific   { background: #e0f0ff; color: #003a80; }
-    .badge-wps       { background: #e0fff4; color: #005a3a; }
-    .badge-manila    { background: #fff8dc; color: #6b4a00; }
-    .badge-taal      { background: #ffe8e8; color: #800010; }
-    .badge-pasig     { background: #e8ffe8; color: #1a5c1a; }
-
-    .size-tag {
-      position: absolute;
-      top: 12px; right: 12px;
-      background: rgba(255,255,255,.85);
-      backdrop-filter: blur(4px);
-      font-size: .72rem;
-      font-weight: 600;
-      color: var(--text-mid);
-      padding: 3px 9px;
-      border-radius: 6px;
-      border: 1px solid rgba(26,111,181,.12);
-    }
-
-    .card-body-custom {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .card-body-custom .product-name {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--text-dark);
-      margin-bottom: 4px;
-      line-height: 1.3;
-    }
-    .card-body-custom .product-type {
-      font-size: .8rem;
-      color: var(--text-light);
-      margin-bottom: 14px;
-    }
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-      margin-bottom: 16px;
-    }
-    .price-currency {
-      font-size: .9rem;
-      font-weight: 700;
-      color: var(--aqua-500);
-      line-height: 1;
-    }
-    .price-amount {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--text-dark);
-      line-height: 1;
-    }
+    /* Product cards — using Bootstrap .card with custom overrides */
+    .product-card.card { border: 1px solid rgba(26,111,181,.09); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); transition: var(--transition); overflow: hidden; }
+    .product-card.card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: rgba(26,111,181,.25); }
+    .card-img-wrap { background: linear-gradient(135deg, var(--aqua-100) 0%, #e8f5ff 100%); display: flex; align-items: center; justify-content: center; padding: 32px 20px; position: relative; min-height: 200px; overflow: hidden; }
+    .card-img-wrap::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 60% 40%, rgba(91,188,255,.25) 0%, transparent 65%); }
+    .bottle-icon { width: 80px; height: 140px; position: relative; z-index: 1; filter: drop-shadow(0 8px 20px rgba(26,111,181,.25)); transition: var(--transition); }
+    .product-card.card:hover .bottle-icon { transform: scale(1.06); }
+    .card-badge-brand { position: absolute; top: 12px; left: 12px; font-size: .7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 50px; }
+    .badge-pacific { background: #e0f0ff; color: #003a80; }
+    .badge-wps { background: #e0fff4; color: #005a3a; }
+    .badge-manila { background: #fff8dc; color: #6b4a00; }
+    .badge-taal { background: #ffe8e8; color: #800010; }
+    .badge-pasig { background: #e8ffe8; color: #1a5c1a; }
+    .size-tag { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,.85); backdrop-filter: blur(4px); font-size: .72rem; font-weight: 600; color: var(--text-mid); padding: 3px 9px; border-radius: 6px; border: 1px solid rgba(26,111,181,.12); }
+    .card-body-custom { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+    .card-body-custom .product-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text-dark); margin-bottom: 4px; }
+    .card-body-custom .product-type { font-size: .8rem; color: var(--text-light); margin-bottom: 14px; }
+    .price-row { display: flex; align-items: baseline; gap: 6px; margin-bottom: 16px; }
+    .price-currency { font-size: .9rem; font-weight: 700; color: var(--aqua-500); }
+    .price-amount { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--text-dark); }
     .price-unit { font-size: .78rem; color: var(--text-light); }
+    .btn-add-cart { background: linear-gradient(135deg, var(--aqua-500), var(--aqua-400)); border: none; color: var(--white); font-weight: 600; font-size: .875rem; padding: 11px; border-radius: 12px; width: 100%; transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: auto; }
+    .btn-add-cart:hover { background: linear-gradient(135deg, var(--aqua-700), var(--aqua-500)); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,111,181,.35); color: var(--white); }
 
-    .btn-add-cart {
-      background: linear-gradient(135deg, var(--aqua-500), var(--aqua-400));
-      border: none;
-      color: var(--white);
-      font-weight: 600;
-      font-size: .875rem;
-      padding: 11px;
-      border-radius: 12px;
-      width: 100%;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: auto;
-    }
-    .btn-add-cart:hover {
-      background: linear-gradient(135deg, var(--aqua-700), var(--aqua-500));
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(26,111,181,.35);
-      color: var(--white);
-    }
-    .btn-add-cart i { font-size: 1rem; }
-
-    /* ─── Featured Products (dark bg) ───────────────────────────── */
-    #featured {
-      background: linear-gradient(160deg, var(--aqua-900) 0%, #07233e 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    #featured::before {
-      content:'';
-      position: absolute;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(0,212,255,.08) 0%, transparent 70%);
-      top: -200px; right: -200px;
-      border-radius: 50%;
-    }
+    /* Featured dark section */
+    #featured { background: linear-gradient(160deg, var(--aqua-900) 0%, #07233e 100%); position: relative; overflow: hidden; }
+    #featured::before { content:''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,212,255,.08) 0%, transparent 70%); top: -200px; right: -200px; border-radius: 50%; }
     #featured .section-label { color: var(--accent); }
     #featured .section-title { color: var(--white); }
-    #featured .section-sub   { color: rgba(255,255,255,.5); }
-    #featured .product-card  {
-      background: rgba(255,255,255,.05);
-      border-color: rgba(255,255,255,.08);
-      backdrop-filter: blur(12px);
-    }
-    #featured .product-card:hover { background: rgba(255,255,255,.10); }
+    #featured .section-sub { color: rgba(255,255,255,.5); }
+    #featured .product-card.card { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.08); backdrop-filter: blur(12px); }
+    #featured .product-card.card:hover { background: rgba(255,255,255,.10); }
     #featured .product-name { color: var(--white) !important; }
     #featured .price-amount { color: var(--white) !important; }
-    #featured .card-img-wrap {
-      background: linear-gradient(135deg, rgba(26,111,181,.25) 0%, rgba(0,212,255,.10) 100%);
-    }
+    #featured .card-img-wrap { background: linear-gradient(135deg, rgba(26,111,181,.25) 0%, rgba(0,212,255,.10) 100%); }
 
-    /* ─── Popular Brands Section ─────────────────────────────────── */
+    /* Brands */
     #brands { background: var(--aqua-50); }
-    .brand-card {
-      background: var(--white);
-      border: 1.5px solid rgba(26,111,181,.10);
-      border-radius: var(--radius-lg);
-      padding: 36px 28px;
-      text-align: center;
-      transition: var(--transition);
-      box-shadow: var(--shadow-card);
-      cursor: pointer;
-    }
-    .brand-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--aqua-400);
-    }
-    .brand-logo-circle {
-      width: 80px; height: 80px;
-      border-radius: 50%;
-      margin: 0 auto 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      letter-spacing: -0.5px;
-    }
-    .logo-pacific  { background: #dceeff; color: #003a80; }
-    .logo-wps      { background: #d6f5e8; color: #005a3a; }
-    .logo-manila   { background: #fff3d6; color: #6b4a00; }
-    .logo-taal     { background: #ffd6d6; color: #800010; }
-    .logo-pasig    { background: #d6f5d6; color: #1a5c1a; }
-    .brand-name {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: var(--text-dark);
-      margin-bottom: 6px;
-    }
-    .brand-tagline {
-      font-size: .82rem;
-      color: var(--text-light);
-      margin-bottom: 16px;
-    }
-    .brand-desc {
-      font-size: .8rem;
-      color: var(--text-mid);
-      line-height: 1.55;
-      margin-bottom: 14px;
-      font-style: italic;
-    }
-    .brand-source {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      color: var(--aqua-500);
-      margin-bottom: 14px;
-    }
-    .brand-sizes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-    }
-    .size-pill {
-      background: var(--aqua-100);
-      color: var(--aqua-700);
-      font-size: .82rem;
-      font-weight: 700;
-      padding: 7px 16px;
-      border-radius: 50px;
-      border: 1.5px solid rgba(26,111,181,.20);
-      letter-spacing: .3px;
-      transition: var(--transition);
-    }
-    .brand-card:hover .size-pill {
-      background: var(--aqua-500);
-      color: var(--white);
-      border-color: var(--aqua-500);
-    }
+    .brand-card { background: var(--white); border: 1.5px solid rgba(26,111,181,.10); border-radius: var(--radius-lg); padding: 36px 28px; text-align: center; transition: var(--transition); box-shadow: var(--shadow-card); cursor: pointer; }
+    .brand-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--aqua-400); }
+    .brand-logo-circle { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 18px; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; }
+    .logo-pacific { background: #dceeff; color: #003a80; } .logo-wps { background: #d6f5e8; color: #005a3a; }
+    .logo-manila { background: #fff3d6; color: #6b4a00; } .logo-taal { background: #ffd6d6; color: #800010; }
+    .logo-pasig { background: #d6f5d6; color: #1a5c1a; }
+    .brand-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text-dark); margin-bottom: 6px; }
+    .brand-tagline { font-size: .82rem; color: var(--text-light); margin-bottom: 16px; }
+    .brand-desc { font-size: .8rem; color: var(--text-mid); line-height: 1.55; margin-bottom: 14px; font-style: italic; }
+    .brand-source { display: inline-flex; align-items: center; gap: 5px; font-size: .72rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--aqua-500); margin-bottom: 14px; }
+    .brand-sizes { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .size-pill { background: var(--aqua-100); color: var(--aqua-700); font-size: .82rem; font-weight: 700; padding: 7px 16px; border-radius: 50px; border: 1.5px solid rgba(26,111,181,.20); transition: var(--transition); }
+    .brand-card:hover .size-pill { background: var(--aqua-500); color: var(--white); border-color: var(--aqua-500); }
 
-    /* ─── Promo Banner ───────────────────────────────────────────── */
-    #promo {
-      background: linear-gradient(135deg, var(--aqua-700) 0%, var(--aqua-500) 100%);
-      padding: 60px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    #promo::before {
-      content:'';
-      position: absolute;
-      width: 400px; height: 400px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.07);
-      top: -150px; right: -80px;
-    }
-    #promo::after {
-      content:'';
-      position: absolute;
-      width: 250px; height: 250px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.05);
-      bottom: -100px; left: 60px;
-    }
+    /* Promo */
+    #promo { background: linear-gradient(135deg, var(--aqua-700) 0%, var(--aqua-500) 100%); padding: 60px 0; position: relative; overflow: hidden; }
+    #promo::before { content:''; position: absolute; width: 400px; height: 400px; border-radius: 50%; background: rgba(255,255,255,.07); top: -150px; right: -80px; }
     .promo-text { color: var(--white); }
-    .promo-text h2 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 12px;
-    }
-    .promo-text p {
-      font-size: 1.05rem;
-      opacity: .8;
-      margin-bottom: 0;
-    }
-    .btn-promo {
-      background: var(--white);
-      color: var(--aqua-700);
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 15px 36px;
-      border-radius: 50px;
-      border: none;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-    .btn-promo:hover {
-      background: var(--accent);
-      color: var(--aqua-900);
-      box-shadow: 0 8px 24px rgba(0,0,0,.20);
-    }
+    .promo-text h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+    .promo-text p { font-size: 1.05rem; opacity: .8; margin-bottom: 0; }
+    .btn-promo { background: var(--white); color: var(--aqua-700); font-weight: 700; font-size: 1rem; padding: 15px 36px; border-radius: 50px; border: none; transition: var(--transition); white-space: nowrap; }
+    .btn-promo:hover { background: var(--accent); color: var(--aqua-900); box-shadow: 0 8px 24px rgba(0,0,0,.20); }
 
-    /* ─── Why Choose Us ──────────────────────────────────────────── */
+    /* Why */
     #why { background: var(--white); }
-    .feature-item {
-      text-align: center;
-      padding: 20px;
-    }
-    .feature-icon-wrap {
-      width: 64px; height: 64px;
-      border-radius: 18px;
-      background: var(--aqua-100);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 18px;
-      font-size: 1.5rem;
-      color: var(--aqua-500);
-      transition: var(--transition);
-    }
-    .feature-item:hover .feature-icon-wrap {
-      background: var(--aqua-500);
-      color: var(--white);
-      transform: rotate(-6deg) scale(1.08);
-    }
-    .feature-item h5 {
-      font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 8px;
-      color: var(--text-dark);
-    }
-    .feature-item p {
-      font-size: .875rem;
-      color: var(--text-light);
-      line-height: 1.6;
-      margin: 0;
-    }
+    .feature-item { text-align: center; padding: 20px; }
+    .feature-icon-wrap { width: 64px; height: 64px; border-radius: 18px; background: var(--aqua-100); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-size: 1.5rem; color: var(--aqua-500); transition: var(--transition); }
+    .feature-item:hover .feature-icon-wrap { background: var(--aqua-500); color: var(--white); transform: rotate(-6deg) scale(1.08); }
+    .feature-item h5 { font-weight: 700; font-size: 1rem; margin-bottom: 8px; color: var(--text-dark); }
+    .feature-item p { font-size: .875rem; color: var(--text-light); line-height: 1.6; margin: 0; }
 
-    /* ─── Footer ─────────────────────────────────────────────────── */
-    footer {
-      background: var(--aqua-900);
-      color: rgba(255,255,255,.65);
-      padding: 64px 0 0;
-    }
-    .footer-brand {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.6rem;
-      color: var(--white);
-      margin-bottom: 14px;
-    }
+    /* Footer */
+    footer { background: var(--aqua-900); color: rgba(255,255,255,.65); padding: 64px 0 0; }
+    .footer-brand { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.6rem; color: var(--white); margin-bottom: 14px; }
     .footer-brand span { color: var(--accent); }
-    .footer-desc {
-      font-size: .88rem;
-      line-height: 1.7;
-      max-width: 260px;
-      margin-bottom: 24px;
-    }
-    .footer-social-btn {
-      width: 38px; height: 38px;
-      background: rgba(255,255,255,.08);
-      border-radius: 10px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,.65);
-      font-size: 1rem;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .footer-social-btn:hover {
-      background: var(--aqua-500);
-      color: var(--white);
-    }
-    .footer-heading {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: .85rem;
-      color: var(--white);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
+    .footer-desc { font-size: .88rem; line-height: 1.7; max-width: 260px; margin-bottom: 24px; }
+    .footer-social-btn { width: 38px; height: 38px; background: rgba(255,255,255,.08); border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; color: rgba(255,255,255,.65); font-size: 1rem; text-decoration: none; transition: var(--transition); }
+    .footer-social-btn:hover { background: var(--aqua-500); color: var(--white); }
+    .footer-heading { font-family: 'Syne', sans-serif; font-weight: 700; font-size: .85rem; color: var(--white); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
     .footer-links { list-style: none; padding: 0; margin: 0; }
     .footer-links li { margin-bottom: 10px; }
-    .footer-links a {
-      color: rgba(255,255,255,.55);
-      text-decoration: none;
-      font-size: .88rem;
-      transition: var(--transition);
-    }
+    .footer-links a { color: rgba(255,255,255,.55); text-decoration: none; font-size: .88rem; transition: var(--transition); }
     .footer-links a:hover { color: var(--accent); padding-left: 4px; }
-    .footer-contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 12px;
-      font-size: .88rem;
-    }
-    .footer-contact-item i {
-      color: var(--accent);
-      font-size: 1rem;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-    .footer-divider {
-      border-top: 1px solid rgba(255,255,255,.08);
-      margin-top: 48px;
-      padding: 20px 0;
-    }
-    .footer-copy {
-      font-size: .82rem;
-      color: rgba(255,255,255,.35);
-    }
-
-    /* ─── Scrollbar ──────────────────────────────────────────────── */
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: .88rem; }
+    .footer-contact-item i { color: var(--accent); font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
+    .footer-divider { border-top: 1px solid rgba(255,255,255,.08); margin-top: 48px; padding: 20px 0; }
+    .footer-copy { font-size: .82rem; color: rgba(255,255,255,.35); }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--aqua-50); }
     ::-webkit-scrollbar-thumb { background: var(--aqua-300); border-radius: 99px; }
-
-    /* ─── Responsive tweaks ──────────────────────────────────────── */
     @media (max-width: 767px) {
-      .hero-stats { gap: 24px; }
-      .hero-visual { height: 260px; margin-top: 40px; }
-      .hero-bottle-img { width: 110px; }
-      section { padding: 60px 0; }
+      .hero-stats { gap: 24px; } .hero-visual { height: 260px; margin-top: 40px; }
+      .hero-bottle-img { width: 110px; } section { padding: 60px 0; }
       .filter-btn { font-size: .8rem; padding: 7px 14px; }
+      .main-carousel .carousel-item { min-height: auto; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ================================================================
-       NAVBAR
-  ================================================================== -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <!-- Brand -->
       <a class="navbar-brand" href="#">Nature<span>Aqua</span> PH</a>
-
-      <!-- Toggler for mobile -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navMenu"
-        aria-controls="navMenu"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <!-- Nav links -->
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav mx-auto gap-1">
-          <li class="nav-item">
-            <a class="nav-link active" href="#hero">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#products">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#brands">Brands</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#brands">Brands</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
         <ul class="navbar-nav gap-2 align-items-lg-center mt-3 mt-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#" style="color:rgba(255,255,255,.65)!important;">
-              <i class="bi bi-search"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-cart-btn" href="#">
-              <i class="bi bi-cart3 me-1"></i> Cart
-              <span class="badge bg-warning text-dark ms-1" style="font-size:.65rem;"></span>
-            </a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#" style="color:rgba(255,255,255,.65)!important;"><i class="bi bi-search"></i></a></li>
+          <li class="nav-item"><a class="nav-link nav-cart-btn" href="#"><i class="bi bi-cart3 me-1"></i> Cart <span class="badge bg-warning text-dark ms-1" style="font-size:.65rem;" id="cart-count">0</span></a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-
-  <!-- ================================================================
-       HERO SECTION
-  ================================================================== -->
+  <!-- HERO -->
   <section id="hero">
-    <!-- Floating decorative blobs -->
     <div class="hero-blob blob-1"></div>
     <div class="hero-blob blob-2"></div>
-
     <div class="container position-relative" style="z-index:2;">
       <div class="row align-items-center gy-5">
-
-        <!-- Left: Text content -->
         <div class="col-lg-6">
-          <span class="hero-badge">
-            <i class="bi bi-droplet-fill me-1"></i> Simple Hydration — Sourced Naturally.
-          </span>
-          <h1 class="hero-headline">
-            Just Water,<br>
-            <span class="highlight">Straight from</span><br>
-            the Source 🤔
-          </h1>
-          <p class="hero-tagline">
-            Shop our exclusive lineup of locally-sourced bottled water — Pacific Crest, WPS Blue, Bay Breeze, Taal Spark, and Pasig Premium.
-            Nature's finest, right here in the Philippines.
-          </p>
+          <span class="hero-badge"><i class="bi bi-droplet-fill me-1"></i> Simple Hydration — Sourced Naturally.</span>
+          <h1 class="hero-headline">Just Water,<br><span class="highlight">Straight from</span><br>the Source 🤔</h1>
+          <p class="hero-tagline">Shop our exclusive lineup of locally-sourced bottled water — Pacific Crest, WPS Blue, Bay Breeze, Taal Spark, and Pasig Premium. Nature's finest, right here in the Philippines.</p>
           <div class="d-flex flex-wrap gap-3">
-            <a href="#products" class="btn btn-hero-primary">
-              Shop Now <i class="bi bi-arrow-right ms-1"></i>
-            </a>
-            <a href="#brands" class="btn btn-hero-secondary">
-              View Brands
-            </a>
+            <a href="#products" class="btn btn-hero-primary">Shop Now <i class="bi bi-arrow-right ms-1"></i></a>
+            <a href="#brands" class="btn btn-hero-secondary">View Brands</a>
           </div>
-
-          <!-- Stats row -->
           <div class="hero-stats">
-            <div class="stat-item">
-              <div class="stat-num">4+</div>
-              <div class="stat-label">Top Brands</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">15+</div>
-              <div class="stat-label">Products</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">24h</div>
-              <div class="stat-label">Delivery</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">₱10</div>
-              <div class="stat-label">Starts At</div>
-            </div>
+            <div class="stat-item"><div class="stat-num">4+</div><div class="stat-label">Top Brands</div></div>
+            <div class="stat-item"><div class="stat-num">15+</div><div class="stat-label">Products</div></div>
+            <div class="stat-item"><div class="stat-num">24h</div><div class="stat-label">Delivery</div></div>
+            <div class="stat-item"><div class="stat-num">₱10</div><div class="stat-label">Starts At</div></div>
           </div>
         </div>
-
-        <!-- Right: Bottle visual -->
         <div class="col-lg-6">
           <div class="hero-visual">
             <div class="bottle-wrap">
               <div class="bottle-glow"></div>
-              <!-- SVG water bottle illustration -->
               <svg class="hero-bottle-img" viewBox="0 0 100 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Cap -->
                 <rect x="36" y="0" width="28" height="18" rx="5" fill="#00d4ff"/>
-                <!-- Neck -->
                 <rect x="38" y="16" width="24" height="20" rx="4" fill="#5bbcff"/>
-                <!-- Body -->
                 <rect x="20" y="34" width="60" height="155" rx="18" fill="url(#bodyGrad)"/>
-                <!-- Highlight -->
                 <rect x="28" y="44" width="14" height="100" rx="7" fill="rgba(255,255,255,0.25)"/>
-                <!-- Water fill line -->
                 <rect x="20" y="90" width="60" height="99" rx="0 0 18 18" fill="url(#waterGrad)" clip-path="url(#bodyClip)"/>
-                <!-- Bottom curve -->
                 <rect x="20" y="34" width="60" height="155" rx="18" fill="url(#bodyOverlay)"/>
-                <!-- Label band -->
                 <rect x="20" y="110" width="60" height="42" fill="rgba(255,255,255,0.12)"/>
-                <!-- Label text placeholder -->
                 <rect x="30" y="118" width="40" height="6" rx="3" fill="rgba(255,255,255,0.5)"/>
                 <rect x="34" y="128" width="32" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
                 <defs>
-                  <linearGradient id="bodyGrad" x1="20" y1="34" x2="80" y2="34" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#bde8ff"/>
-                    <stop offset="1" stop-color="#e8f7ff"/>
-                  </linearGradient>
-                  <linearGradient id="waterGrad" x1="20" y1="90" x2="80" y2="90" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#1a6fb5" stop-opacity="0.55"/>
-                    <stop offset="1" stop-color="#2591e8" stop-opacity="0.35"/>
-                  </linearGradient>
-                  <linearGradient id="bodyOverlay" x1="20" y1="0" x2="80" y2="0" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="transparent"/>
-                    <stop offset="0.85" stop-color="rgba(255,255,255,0.04)"/>
-                    <stop offset="1" stop-color="rgba(255,255,255,0.10)"/>
-                  </linearGradient>
-                  <clipPath id="bodyClip">
-                    <rect x="20" y="34" width="60" height="155" rx="18"/>
-                  </clipPath>
+                  <linearGradient id="bodyGrad" x1="20" y1="34" x2="80" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#bde8ff"/><stop offset="1" stop-color="#e8f7ff"/></linearGradient>
+                  <linearGradient id="waterGrad" x1="20" y1="90" x2="80" y2="90" gradientUnits="userSpaceOnUse"><stop stop-color="#1a6fb5" stop-opacity="0.55"/><stop offset="1" stop-color="#2591e8" stop-opacity="0.35"/></linearGradient>
+                  <linearGradient id="bodyOverlay" x1="20" y1="0" x2="80" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="transparent"/><stop offset="0.85" stop-color="rgba(255,255,255,0.04)"/><stop offset="1" stop-color="rgba(255,255,255,0.10)"/></linearGradient>
+                  <clipPath id="bodyClip"><rect x="20" y="34" width="60" height="155" rx="18"/></clipPath>
                 </defs>
               </svg>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-
   <!-- ================================================================
-       WHY CHOOSE US
+       BRAND CAROUSEL
   ================================================================== -->
+  <section id="hero-carousel" style="padding:0;">
+    <div id="brandCarousel" class="carousel slide main-carousel" data-bs-ride="carousel" data-bs-interval="4500">
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#brandCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#brandCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#brandCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#brandCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+
+      <div class="carousel-inner">
+
+        <!-- Slide 1: Pacific Crest -->
+        <div class="carousel-item active slide-bg-1">
+          <div class="container">
+            <div class="row align-items-center gy-4">
+              <div class="col-lg-7 carousel-slide-inner">
+                <span class="slide-label"><i class="bi bi-droplet-fill me-1"></i> Pacific Crest</span>
+                <h2>Deep Blue.<br>Straight from the Pacific.</h2>
+                <p>Why settle for ordinary when you can drink from the world's biggest ocean? Pacific Crest travels thousands of nautical miles so you don't have to. Bold. Vast. Slightly salty.</p>
+                <a href="#products" class="btn btn-slide">Shop Pacific Crest <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+              <div class="col-lg-5">
+                <div class="carousel-visual">
+                  <svg class="carousel-bottle" viewBox="0 0 60 130" fill="none">
+                    <rect x="22" y="0" width="16" height="10" rx="3" fill="#00d4ff"/>
+                    <rect x="23" y="9" width="14" height="12" rx="3" fill="#5bbcff"/>
+                    <rect x="10" y="20" width="40" height="95" rx="12" fill="url(#cb1g)"/>
+                    <rect x="16" y="28" width="8" height="55" rx="4" fill="rgba(255,255,255,0.3)"/>
+                    <rect x="10" y="65" width="40" height="50" rx="0 0 12 12" fill="rgba(26,111,181,0.40)" clip-path="url(#cb1c)"/>
+                    <defs>
+                      <linearGradient id="cb1g" x1="10" y1="20" x2="50" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#c8e6ff"/><stop offset="1" stop-color="#e8f5ff"/></linearGradient>
+                      <clipPath id="cb1c"><rect x="10" y="20" width="40" height="95" rx="12"/></clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: WPS Blue -->
+        <div class="carousel-item slide-bg-2">
+          <div class="container">
+            <div class="row align-items-center gy-4">
+              <div class="col-lg-7 carousel-slide-inner">
+                <span class="slide-label" style="color:#4ade80;"><i class="bi bi-flag-fill me-1"></i> WPS Blue</span>
+                <h2>Refreshingly<br>Sovereign.</h2>
+                <p>A patriotic sip with every gulp. Bottled from waters that are ours — we said so on the label. Every bottle comes with a Certificate of Territorial Integrity.</p>
+                <a href="#products" class="btn btn-slide" style="background:linear-gradient(135deg,#16a34a,#4ade80);">Shop WPS Blue <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+              <div class="col-lg-5">
+                <div class="carousel-visual">
+                  <svg class="carousel-bottle" style="filter:drop-shadow(0 16px 40px rgba(74,222,128,.4));" viewBox="0 0 60 130" fill="none">
+                    <rect x="22" y="0" width="16" height="10" rx="3" fill="#16a34a"/>
+                    <rect x="23" y="9" width="14" height="12" rx="3" fill="#4ade80"/>
+                    <rect x="10" y="20" width="40" height="95" rx="12" fill="url(#cb2g)"/>
+                    <rect x="16" y="28" width="8" height="55" rx="4" fill="rgba(255,255,255,0.3)"/>
+                    <rect x="10" y="70" width="40" height="45" rx="0 0 12 12" fill="rgba(22,163,74,0.35)" clip-path="url(#cb2c)"/>
+                    <defs>
+                      <linearGradient id="cb2g" x1="10" y1="20" x2="50" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#d1fae5"/><stop offset="1" stop-color="#ecfdf5"/></linearGradient>
+                      <clipPath id="cb2c"><rect x="10" y="20" width="40" height="95" rx="12"/></clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Taal Spark -->
+        <div class="carousel-item slide-bg-3">
+          <div class="container">
+            <div class="row align-items-center gy-4">
+              <div class="col-lg-7 carousel-slide-inner">
+                <span class="slide-label" style="color:#f87171;"><i class="bi bi-lightning-charge-fill me-1"></i> Taal Spark</span>
+                <h2>Naturally Carbonated.<br>Volcanically Tempered.</h2>
+                <p>The only water brand that may or may not have mild tectonic activity. Our bottling plant operates on an active schedule — just like the volcano itself. Drink with excitement.</p>
+                <a href="#products" class="btn btn-slide" style="background:linear-gradient(135deg,#dc2626,#f87171);">Shop Taal Spark <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+              <div class="col-lg-5">
+                <div class="carousel-visual">
+                  <svg class="carousel-bottle" style="filter:drop-shadow(0 16px 40px rgba(248,113,113,.4));" viewBox="0 0 60 130" fill="none">
+                    <rect x="22" y="0" width="16" height="10" rx="3" fill="#dc2626"/>
+                    <rect x="23" y="9" width="14" height="12" rx="3" fill="#f87171"/>
+                    <rect x="10" y="20" width="40" height="95" rx="12" fill="url(#cb3g)"/>
+                    <rect x="16" y="28" width="8" height="55" rx="4" fill="rgba(255,255,255,0.3)"/>
+                    <rect x="10" y="70" width="40" height="45" rx="0 0 12 12" fill="rgba(220,38,38,0.30)" clip-path="url(#cb3c)"/>
+                    <defs>
+                      <linearGradient id="cb3g" x1="10" y1="20" x2="50" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe4e4"/><stop offset="1" stop-color="#fff5f5"/></linearGradient>
+                      <clipPath id="cb3c"><rect x="10" y="20" width="40" height="95" rx="12"/></clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: Bay Breeze -->
+        <div class="carousel-item slide-bg-4">
+          <div class="container">
+            <div class="row align-items-center gy-4">
+              <div class="col-lg-7 carousel-slide-inner">
+                <span class="slide-label" style="color:#fbbf24;"><i class="bi bi-sunset-fill me-1"></i> Bay Breeze</span>
+                <h2>Taste the Sunset.<br>Smell the Culture.</h2>
+                <p>Inspired by the world-famous Manila Bay sunset. Bay Breeze captures that warm, golden hue in every bottle. Best served with dolomite sand and existential reflection.</p>
+                <a href="#products" class="btn btn-slide" style="background:linear-gradient(135deg,#d97706,#fbbf24);color:#1a0a00;">Shop Bay Breeze <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+              <div class="col-lg-5">
+                <div class="carousel-visual">
+                  <svg class="carousel-bottle" style="filter:drop-shadow(0 16px 40px rgba(251,191,36,.4));" viewBox="0 0 60 130" fill="none">
+                    <rect x="22" y="0" width="16" height="10" rx="3" fill="#d97706"/>
+                    <rect x="23" y="9" width="14" height="12" rx="3" fill="#fbbf24"/>
+                    <rect x="10" y="20" width="40" height="95" rx="12" fill="url(#cb4g)"/>
+                    <rect x="16" y="28" width="8" height="55" rx="4" fill="rgba(255,255,255,0.3)"/>
+                    <rect x="10" y="70" width="40" height="45" rx="0 0 12 12" fill="rgba(217,119,6,0.30)" clip-path="url(#cb4c)"/>
+                    <defs>
+                      <linearGradient id="cb4g" x1="10" y1="20" x2="50" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#fef3c7"/><stop offset="1" stop-color="#fffbeb"/></linearGradient>
+                      <clipPath id="cb4c"><rect x="10" y="20" width="40" height="95" rx="12"/></clipPath>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /carousel-inner -->
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#brandCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#brandCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
   <section id="why">
     <div class="container">
       <div class="row g-4">
-        <div class="col-6 col-md-3">
-          <div class="feature-item">
-            <div class="feature-icon-wrap">
-              <i class="bi bi-truck"></i>
-            </div>
-            <h5>Fast Delivery</h5>
-            <p>Same-day or next-year delivery across Metro Manila and key areas.</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="feature-item">
-            <div class="feature-icon-wrap">
-              <i class="bi bi-shield-check"></i>
-            </div>
-            <h5>Certified… Safe?</h5>
-            <p>All products undergo our proprietary 812371-step test. Results pending.</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="feature-item">
-            <div class="feature-icon-wrap">
-              <i class="bi bi-tags"></i>
-            </div>
-            <h5>Best Prices</h5>
-            <p>Competitive pricing with exclusive online deals and bundles.</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="feature-item">
-            <div class="feature-icon-wrap">
-              <i class="bi bi-arrow-repeat"></i>
-            </div>
-            <h5>Easy Returns</h5>
-            <p>Hassle-free returns and replacements within 7 days, no questions asked.</p>
-          </div>
-        </div>
+        <div class="col-6 col-md-3"><div class="feature-item"><div class="feature-icon-wrap"><i class="bi bi-truck"></i></div><h5>Fast Delivery</h5><p>Same-day or next-day delivery across Metro Manila and key areas.</p></div></div>
+        <div class="col-6 col-md-3"><div class="feature-item"><div class="feature-icon-wrap"><i class="bi bi-shield-check"></i></div><h5>Certified… Safe?</h5><p>All products undergo our proprietary 812371-step test. Results pending.</p></div></div>
+        <div class="col-6 col-md-3"><div class="feature-item"><div class="feature-icon-wrap"><i class="bi bi-tags"></i></div><h5>Best Prices</h5><p>Competitive pricing with exclusive online deals and bundles.</p></div></div>
+        <div class="col-6 col-md-3"><div class="feature-item"><div class="feature-icon-wrap"><i class="bi bi-arrow-repeat"></i></div><h5>Easy Returns</h5><p>Hassle-free returns and replacements within 7 days, no questions asked.</p></div></div>
       </div>
     </div>
   </section>
 
-
-  <!-- ================================================================
-       FEATURED PRODUCTS (Dark section)
-  ================================================================== -->
+  <!-- FEATURED PRODUCTS (Dark) -->
   <section id="featured">
     <div class="container position-relative" style="z-index:1;">
-
-      <!-- Heading -->
       <div class="row mb-4">
         <div class="col-lg-7">
           <span class="section-label">🔥 Editor's Pick</span>
@@ -975,184 +426,93 @@
           <p class="section-sub">Our naturally-sourced bestsellers — swimming off the shelves.</p>
         </div>
       </div>
-
-      <!-- Product grid — 4 featured cards -->
       <div class="row g-4">
 
-        <!-- Card 1: Pacific Crest 500ml -->
+        <!-- Featured Card 1 -->
         <div class="col-sm-6 col-lg-3">
-          <div class="product-card">
+          <div class="product-card card h-100">
             <div class="card-img-wrap">
               <span class="card-badge-brand badge-pacific">Pacific Crest</span>
               <span class="size-tag">500ml</span>
-              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none">
-                <rect x="22" y="0" width="16" height="10" rx="3" fill="#1a6fb5"/>
-                <rect x="23" y="9" width="14" height="12" rx="3" fill="#5bbcff"/>
-                <rect x="10" y="20" width="40" height="95" rx="12" fill="url(#b1g)"/>
-                <rect x="16" y="28" width="8" height="55" rx="4" fill="rgba(255,255,255,0.3)"/>
-                <rect x="10" y="65" width="40" height="50" rx="0 0 12 12" fill="rgba(26,111,181,0.35)" clip-path="url(#b1c)"/>
-                <rect x="10" y="20" width="40" height="95" rx="12" fill="url(#bov)"/>
-                <defs>
-                  <linearGradient id="b1g" x1="10" y1="20" x2="50" y2="20" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#c8e6ff"/><stop offset="1" stop-color="#e8f5ff"/>
-                  </linearGradient>
-                  <linearGradient id="bov" x1="10" y1="0" x2="50" y2="0" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="transparent"/><stop offset="1" stop-color="rgba(255,255,255,0.08)"/>
-                  </linearGradient>
-                  <clipPath id="b1c"><rect x="10" y="20" width="40" height="95" rx="12"/></clipPath>
-                </defs>
-              </svg>
+              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none"><rect x="22" y="0" width="16" height="10" rx="3" fill="#1a6fb5"/><rect x="23" y="9" width="14" height="12" rx="3" fill="#5bbcff"/><rect x="10" y="20" width="40" height="95" rx="12" fill="url(#b1g)"/><rect x="16" y="28" width="8" height="55" rx="4" fill="rgba(255,255,255,0.3)"/><rect x="10" y="65" width="40" height="50" rx="0 0 12 12" fill="rgba(26,111,181,0.35)" clip-path="url(#b1c)"/><rect x="10" y="20" width="40" height="95" rx="12" fill="url(#bov)"/><defs><linearGradient id="b1g" x1="10" y1="20" x2="50" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#c8e6ff"/><stop offset="1" stop-color="#e8f5ff"/></linearGradient><linearGradient id="bov" x1="10" y1="0" x2="50" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="transparent"/><stop offset="1" stop-color="rgba(255,255,255,0.08)"/></linearGradient><clipPath id="b1c"><rect x="10" y="20" width="40" height="95" rx="12"/></clipPath></defs></svg>
             </div>
             <div class="card-body-custom">
               <div class="product-name">Pacific Crest Deep Blue</div>
               <div class="product-type">Pacific Ocean · 500ml</div>
-              <div class="price-row">
-                <span class="price-currency">₱</span>
-                <span class="price-amount">14</span>
-                <span class="price-unit">/bottle</span>
-              </div>
-              <button class="btn btn-add-cart">
-                <i class="bi bi-cart-plus"></i> Add to Cart
-              </button>
+              <div class="price-row"><span class="price-currency">₱</span><span class="price-amount">14</span><span class="price-unit">/bottle</span></div>
+              <button class="btn btn-add-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
 
-        <!-- Card 2: WPS Blue 500ml -->
+        <!-- Featured Card 2 -->
         <div class="col-sm-6 col-lg-3">
-          <div class="product-card">
+          <div class="product-card card h-100">
             <div class="card-img-wrap">
               <span class="card-badge-brand badge-wps">WPS Blue</span>
               <span class="size-tag">500ml</span>
-              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none">
-                <rect x="22" y="0" width="16" height="10" rx="3" fill="#16a34a"/>
-                <rect x="23" y="9" width="14" height="12" rx="3" fill="#4ade80"/>
-                <rect x="10" y="20" width="40" height="95" rx="12" fill="url(#b2g)"/>
-                <rect x="16" y="28" width="8" height="55" rx="4" fill="rgba(255,255,255,0.3)"/>
-                <rect x="10" y="70" width="40" height="45" rx="0 0 12 12" fill="rgba(22,163,74,0.25)" clip-path="url(#b2c)"/>
-                <rect x="10" y="20" width="40" height="95" rx="12" fill="url(#bov2)"/>
-                <defs>
-                  <linearGradient id="b2g" x1="10" y1="20" x2="50" y2="20" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#d1fae5"/><stop offset="1" stop-color="#ecfdf5"/>
-                  </linearGradient>
-                  <linearGradient id="bov2" x1="10" y1="0" x2="50" y2="0" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="transparent"/><stop offset="1" stop-color="rgba(255,255,255,0.08)"/>
-                  </linearGradient>
-                  <clipPath id="b2c"><rect x="10" y="20" width="40" height="95" rx="12"/></clipPath>
-                </defs>
-              </svg>
+              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none"><rect x="22" y="0" width="16" height="10" rx="3" fill="#16a34a"/><rect x="23" y="9" width="14" height="12" rx="3" fill="#4ade80"/><rect x="10" y="20" width="40" height="95" rx="12" fill="url(#b2g)"/><rect x="16" y="28" width="8" height="55" rx="4" fill="rgba(255,255,255,0.3)"/><rect x="10" y="70" width="40" height="45" rx="0 0 12 12" fill="rgba(22,163,74,0.25)" clip-path="url(#b2c)"/><defs><linearGradient id="b2g" x1="10" y1="20" x2="50" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#d1fae5"/><stop offset="1" stop-color="#ecfdf5"/></linearGradient><clipPath id="b2c"><rect x="10" y="20" width="40" height="95" rx="12"/></clipPath></defs></svg>
             </div>
             <div class="card-body-custom">
               <div class="product-name">WPS Blue Sovereign</div>
               <div class="product-type">West Philippines Sea · 500ml</div>
-              <div class="price-row">
-                <span class="price-currency">₱</span>
-                <span class="price-amount">18</span>
-                <span class="price-unit">/bottle</span>
-              </div>
-              <button class="btn btn-add-cart">
-                <i class="bi bi-cart-plus"></i> Add to Cart
-              </button>
+              <div class="price-row"><span class="price-currency">₱</span><span class="price-amount">18</span><span class="price-unit">/bottle</span></div>
+              <button class="btn btn-add-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
 
-        <!-- Card 3: Taal Spark 1L -->
+        <!-- Featured Card 3 -->
         <div class="col-sm-6 col-lg-3">
-          <div class="product-card">
+          <div class="product-card card h-100">
             <div class="card-img-wrap">
               <span class="card-badge-brand badge-taal">Taal Spark</span>
               <span class="size-tag">1L</span>
-              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none">
-                <rect x="22" y="0" width="16" height="10" rx="3" fill="#dc2626"/>
-                <rect x="23" y="9" width="14" height="12" rx="3" fill="#f87171"/>
-                <rect x="12" y="20" width="36" height="100" rx="10" fill="url(#b3g)"/>
-                <rect x="17" y="28" width="7" height="60" rx="4" fill="rgba(255,255,255,0.3)"/>
-                <rect x="12" y="72" width="36" height="48" rx="0 0 10 10" fill="rgba(220,38,38,0.20)" clip-path="url(#b3c)"/>
-                <defs>
-                  <linearGradient id="b3g" x1="12" y1="20" x2="48" y2="20" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#ffe4e4"/><stop offset="1" stop-color="#fff5f5"/>
-                  </linearGradient>
-                  <clipPath id="b3c"><rect x="12" y="20" width="36" height="100" rx="10"/></clipPath>
-                </defs>
-              </svg>
+              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none"><rect x="22" y="0" width="16" height="10" rx="3" fill="#dc2626"/><rect x="23" y="9" width="14" height="12" rx="3" fill="#f87171"/><rect x="12" y="20" width="36" height="100" rx="10" fill="url(#b3g)"/><rect x="17" y="28" width="7" height="60" rx="4" fill="rgba(255,255,255,0.3)"/><rect x="12" y="72" width="36" height="48" rx="0 0 10 10" fill="rgba(220,38,38,0.20)" clip-path="url(#b3c)"/><defs><linearGradient id="b3g" x1="12" y1="20" x2="48" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe4e4"/><stop offset="1" stop-color="#fff5f5"/></linearGradient><clipPath id="b3c"><rect x="12" y="20" width="36" height="100" rx="10"/></clipPath></defs></svg>
             </div>
             <div class="card-body-custom">
               <div class="product-name">Taal Spark Volcanic</div>
               <div class="product-type">Taal Lake · 1L</div>
-              <div class="price-row">
-                <span class="price-currency">₱</span>
-                <span class="price-amount">22</span>
-                <span class="price-unit">/bottle</span>
-              </div>
-              <button class="btn btn-add-cart">
-                <i class="bi bi-cart-plus"></i> Add to Cart
-              </button>
+              <div class="price-row"><span class="price-currency">₱</span><span class="price-amount">22</span><span class="price-unit">/bottle</span></div>
+              <button class="btn btn-add-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
 
-        <!-- Card 4: Bay Breeze 5L -->
+        <!-- Featured Card 4 -->
         <div class="col-sm-6 col-lg-3">
-          <div class="product-card">
+          <div class="product-card card h-100">
             <div class="card-img-wrap">
               <span class="card-badge-brand badge-manila">Bay Breeze</span>
               <span class="size-tag">5L</span>
-              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none">
-                <rect x="20" y="0" width="20" height="12" rx="4" fill="#d97706"/>
-                <rect x="21" y="11" width="18" height="14" rx="4" fill="#fbbf24"/>
-                <rect x="6" y="24" width="48" height="98" rx="14" fill="url(#b4g)"/>
-                <rect x="13" y="32" width="9" height="65" rx="5" fill="rgba(255,255,255,0.28)"/>
-                <rect x="6" y="75" width="48" height="47" rx="0 0 14 14" fill="rgba(217,119,6,0.30)" clip-path="url(#b4c)"/>
-                <defs>
-                  <linearGradient id="b4g" x1="6" y1="24" x2="54" y2="24" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#fef3c7"/><stop offset="1" stop-color="#fffbeb"/>
-                  </linearGradient>
-                  <clipPath id="b4c"><rect x="6" y="24" width="48" height="98" rx="14"/></clipPath>
-                </defs>
-              </svg>
+              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none"><rect x="20" y="0" width="20" height="12" rx="4" fill="#d97706"/><rect x="21" y="11" width="18" height="14" rx="4" fill="#fbbf24"/><rect x="6" y="24" width="48" height="98" rx="14" fill="url(#b4g)"/><rect x="13" y="32" width="9" height="65" rx="5" fill="rgba(255,255,255,0.28)"/><rect x="6" y="75" width="48" height="47" rx="0 0 14 14" fill="rgba(217,119,6,0.30)" clip-path="url(#b4c)"/><defs><linearGradient id="b4g" x1="6" y1="24" x2="54" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#fef3c7"/><stop offset="1" stop-color="#fffbeb"/></linearGradient><clipPath id="b4c"><rect x="6" y="24" width="48" height="98" rx="14"/></clipPath></defs></svg>
             </div>
             <div class="card-body-custom">
               <div class="product-name">Bay Breeze Sunset Jug</div>
               <div class="product-type">Manila Bay · 5L</div>
-              <div class="price-row">
-                <span class="price-currency">₱</span>
-                <span class="price-amount">56</span>
-                <span class="price-unit">/jug</span>
-              </div>
-              <button class="btn btn-add-cart">
-                <i class="bi bi-cart-plus"></i> Add to Cart
-              </button>
+              <div class="price-row"><span class="price-currency">₱</span><span class="price-amount">56</span><span class="price-unit">/jug</span></div>
+              <button class="btn btn-add-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
 
-      </div><!-- /featured row -->
+      </div>
     </div>
   </section>
 
-
-  <!-- ================================================================
-       ALL PRODUCTS (Light section)
-  ================================================================== -->
+  <!-- ALL PRODUCTS -->
   <section id="products" style="background:var(--aqua-50);">
     <div class="container">
-
-      <!-- Heading -->
       <div class="row mb-4 align-items-end">
         <div class="col-lg-7">
           <span class="section-label">All Products</span>
           <h2 class="section-title">Shop by Size &amp; Brand</h2>
-          <p class="section-sub">From single-serve bottles to large family jugs — all your hydration needs in one place.</p>
+          <p class="section-sub">From single-serve bottles to large family jugs — all your hydration needs.</p>
         </div>
         <div class="col-lg-5 text-lg-end mt-3 mt-lg-0">
-          <a href="#" class="btn" style="border:1.5px solid var(--aqua-500);color:var(--aqua-500);border-radius:50px;padding:10px 24px;font-weight:600;">
-            View All <i class="bi bi-arrow-right ms-1"></i>
-          </a>
+          <a href="#" class="btn" style="border:1.5px solid var(--aqua-500);color:var(--aqua-500);border-radius:50px;padding:10px 24px;font-weight:600;">View All <i class="bi bi-arrow-right ms-1"></i></a>
         </div>
       </div>
-
-      <!-- Size filters -->
       <div class="d-flex flex-wrap gap-2 mb-5">
         <button class="filter-btn active">All Sizes</button>
         <button class="filter-btn">300ml</button>
@@ -1161,430 +521,167 @@
         <button class="filter-btn">1.5L</button>
         <button class="filter-btn">5L</button>
       </div>
-
-      <!-- 8 product cards -->
       <div class="row g-4">
 
-        <!-- P1: Pacific Crest 330ml -->
+        <!-- P1 -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card">
+          <div class="product-card card h-100">
             <div class="card-img-wrap">
-              <span class="card-badge-brand badge-pacific">Pacific Crest</span>
-              <span class="size-tag">330ml</span>
-              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none">
-                <rect x="23" y="0" width="14" height="9" rx="3" fill="#1a6fb5"/>
-                <rect x="24" y="8" width="12" height="11" rx="3" fill="#5bbcff"/>
-                <rect x="14" y="18" width="32" height="90" rx="11" fill="url(#g1)"/>
-                <rect x="19" y="25" width="7" height="50" rx="4" fill="rgba(255,255,255,0.32)"/>
-                <rect x="14" y="62" width="32" height="46" rx="0 0 11 11" fill="rgba(26,111,181,0.30)" clip-path="url(#c1)"/>
-                <defs>
-                  <linearGradient id="g1" x1="14" y1="18" x2="46" y2="18" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#c8e6ff"/><stop offset="1" stop-color="#e8f5ff"/>
-                  </linearGradient>
-                  <clipPath id="c1"><rect x="14" y="18" width="32" height="90" rx="11"/></clipPath>
-                </defs>
-              </svg>
+              <span class="card-badge-brand badge-pacific">Pacific Crest</span><span class="size-tag">330ml</span>
+              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none"><rect x="23" y="0" width="14" height="9" rx="3" fill="#1a6fb5"/><rect x="24" y="8" width="12" height="11" rx="3" fill="#5bbcff"/><rect x="14" y="18" width="32" height="90" rx="11" fill="url(#g1)"/><rect x="19" y="25" width="7" height="50" rx="4" fill="rgba(255,255,255,0.32)"/><rect x="14" y="62" width="32" height="46" rx="0 0 11 11" fill="rgba(26,111,181,0.30)" clip-path="url(#c1)"/><defs><linearGradient id="g1" x1="14" y1="18" x2="46" y2="18" gradientUnits="userSpaceOnUse"><stop stop-color="#c8e6ff"/><stop offset="1" stop-color="#e8f5ff"/></linearGradient><clipPath id="c1"><rect x="14" y="18" width="32" height="90" rx="11"/></clipPath></defs></svg>
             </div>
             <div class="card-body-custom">
-              <div class="product-name">Pacific Crest Deep Blue</div>
-              <div class="product-type">Pacific Ocean · 330ml</div>
-              <div class="price-row">
-                <span class="price-currency">₱</span>
-                <span class="price-amount">10</span>
-                <span class="price-unit">/bottle</span>
-              </div>
-              <button class="btn btn-add-cart">
-                <i class="bi bi-cart-plus"></i> Add to Cart
-              </button>
+              <div class="product-name">Pacific Crest Deep Blue</div><div class="product-type">Pacific Ocean · 330ml</div>
+              <div class="price-row"><span class="price-currency">₱</span><span class="price-amount">10</span><span class="price-unit">/bottle</span></div>
+              <button class="btn btn-add-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
 
-        <!-- P2: WPS Blue 500ml -->
+        <!-- P2 -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card">
+          <div class="product-card card h-100">
             <div class="card-img-wrap">
-              <span class="card-badge-brand badge-wps">WPS Blue</span>
-              <span class="size-tag">500ml</span>
-              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none">
-                <rect x="22" y="0" width="16" height="10" rx="3" fill="#16a34a"/>
-                <rect x="23" y="9" width="14" height="12" rx="3" fill="#4ade80"/>
-                <rect x="10" y="20" width="40" height="95" rx="12" fill="url(#g2)"/>
-                <rect x="16" y="28" width="8" height="55" rx="4" fill="rgba(255,255,255,0.3)"/>
-                <rect x="10" y="65" width="40" height="50" rx="0 0 12 12" fill="rgba(22,163,74,0.30)" clip-path="url(#c2)"/>
-                <defs>
-                  <linearGradient id="g2" x1="10" y1="20" x2="50" y2="20" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#d1fae5"/><stop offset="1" stop-color="#ecfdf5"/>
-                  </linearGradient>
-                  <clipPath id="c2"><rect x="10" y="20" width="40" height="95" rx="12"/></clipPath>
-                </defs>
-              </svg>
+              <span class="card-badge-brand badge-wps">WPS Blue</span><span class="size-tag">500ml</span>
+              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none"><rect x="22" y="0" width="16" height="10" rx="3" fill="#16a34a"/><rect x="23" y="9" width="14" height="12" rx="3" fill="#4ade80"/><rect x="10" y="20" width="40" height="95" rx="12" fill="url(#g2)"/><rect x="16" y="28" width="8" height="55" rx="4" fill="rgba(255,255,255,0.3)"/><rect x="10" y="65" width="40" height="50" rx="0 0 12 12" fill="rgba(22,163,74,0.30)" clip-path="url(#c2)"/><defs><linearGradient id="g2" x1="10" y1="20" x2="50" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#d1fae5"/><stop offset="1" stop-color="#ecfdf5"/></linearGradient><clipPath id="c2"><rect x="10" y="20" width="40" height="95" rx="12"/></clipPath></defs></svg>
             </div>
             <div class="card-body-custom">
-              <div class="product-name">WPS Blue Sovereign</div>
-              <div class="product-type">West Philippines Sea · 500ml</div>
-              <div class="price-row">
-                <span class="price-currency">₱</span>
-                <span class="price-amount">14</span>
-                <span class="price-unit">/bottle</span>
-              </div>
-              <button class="btn btn-add-cart">
-                <i class="bi bi-cart-plus"></i> Add to Cart
-              </button>
+              <div class="product-name">WPS Blue Sovereign</div><div class="product-type">West Philippines Sea · 500ml</div>
+              <div class="price-row"><span class="price-currency">₱</span><span class="price-amount">14</span><span class="price-unit">/bottle</span></div>
+              <button class="btn btn-add-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
 
-        <!-- P3: Bay Breeze 500ml -->
+        <!-- P3 -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card">
+          <div class="product-card card h-100">
             <div class="card-img-wrap">
-              <span class="card-badge-brand badge-manila">Bay Breeze</span>
-              <span class="size-tag">500ml</span>
-              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none">
-                <rect x="22" y="0" width="16" height="10" rx="3" fill="#d97706"/>
-                <rect x="23" y="9" width="14" height="12" rx="3" fill="#fbbf24"/>
-                <rect x="12" y="20" width="36" height="100" rx="10" fill="url(#g3)"/>
-                <rect x="17" y="28" width="7" height="60" rx="4" fill="rgba(255,255,255,0.3)"/>
-                <rect x="12" y="72" width="36" height="48" rx="0 0 10 10" fill="rgba(217,119,6,0.25)" clip-path="url(#c3)"/>
-                <defs>
-                  <linearGradient id="g3" x1="12" y1="20" x2="48" y2="20" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#fef3c7"/><stop offset="1" stop-color="#fffbeb"/>
-                  </linearGradient>
-                  <clipPath id="c3"><rect x="12" y="20" width="36" height="100" rx="10"/></clipPath>
-                </defs>
-              </svg>
+              <span class="card-badge-brand badge-manila">Bay Breeze</span><span class="size-tag">500ml</span>
+              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none"><rect x="22" y="0" width="16" height="10" rx="3" fill="#d97706"/><rect x="23" y="9" width="14" height="12" rx="3" fill="#fbbf24"/><rect x="12" y="20" width="36" height="100" rx="10" fill="url(#g3)"/><rect x="17" y="28" width="7" height="60" rx="4" fill="rgba(255,255,255,0.3)"/><rect x="12" y="72" width="36" height="48" rx="0 0 10 10" fill="rgba(217,119,6,0.25)" clip-path="url(#c3)"/><defs><linearGradient id="g3" x1="12" y1="20" x2="48" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#fef3c7"/><stop offset="1" stop-color="#fffbeb"/></linearGradient><clipPath id="c3"><rect x="12" y="20" width="36" height="100" rx="10"/></clipPath></defs></svg>
             </div>
             <div class="card-body-custom">
-              <div class="product-name">Bay Breeze Sunset</div>
-              <div class="product-type">Manila Bay · 500ml</div>
-              <div class="price-row">
-                <span class="price-currency">₱</span>
-                <span class="price-amount">16</span>
-                <span class="price-unit">/bottle</span>
-              </div>
-              <button class="btn btn-add-cart">
-                <i class="bi bi-cart-plus"></i> Add to Cart
-              </button>
+              <div class="product-name">Bay Breeze Sunset</div><div class="product-type">Manila Bay · 500ml</div>
+              <div class="price-row"><span class="price-currency">₱</span><span class="price-amount">16</span><span class="price-unit">/bottle</span></div>
+              <button class="btn btn-add-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
 
-        <!-- P4: Taal Spark 500ml -->
+        <!-- P4 -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card">
+          <div class="product-card card h-100">
             <div class="card-img-wrap">
-              <span class="card-badge-brand badge-taal">Taal Spark</span>
-              <span class="size-tag">500ml</span>
-              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none">
-                <rect x="22" y="0" width="16" height="10" rx="3" fill="#dc2626"/>
-                <rect x="23" y="9" width="14" height="12" rx="3" fill="#f87171"/>
-                <rect x="10" y="20" width="40" height="95" rx="12" fill="url(#g4)"/>
-                <rect x="16" y="28" width="8" height="55" rx="4" fill="rgba(255,255,255,0.3)"/>
-                <rect x="10" y="70" width="40" height="45" rx="0 0 12 12" fill="rgba(220,38,38,0.20)" clip-path="url(#c4)"/>
-                <defs>
-                  <linearGradient id="g4" x1="10" y1="20" x2="50" y2="20" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#ffe4e4"/><stop offset="1" stop-color="#fff5f5"/>
-                  </linearGradient>
-                  <clipPath id="c4"><rect x="10" y="20" width="40" height="95" rx="12"/></clipPath>
-                </defs>
-              </svg>
+              <span class="card-badge-brand badge-taal">Taal Spark</span><span class="size-tag">500ml</span>
+              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none"><rect x="22" y="0" width="16" height="10" rx="3" fill="#dc2626"/><rect x="23" y="9" width="14" height="12" rx="3" fill="#f87171"/><rect x="10" y="20" width="40" height="95" rx="12" fill="url(#g4)"/><rect x="16" y="28" width="8" height="55" rx="4" fill="rgba(255,255,255,0.3)"/><rect x="10" y="70" width="40" height="45" rx="0 0 12 12" fill="rgba(220,38,38,0.20)" clip-path="url(#c4)"/><defs><linearGradient id="g4" x1="10" y1="20" x2="50" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe4e4"/><stop offset="1" stop-color="#fff5f5"/></linearGradient><clipPath id="c4"><rect x="10" y="20" width="40" height="95" rx="12"/></clipPath></defs></svg>
             </div>
             <div class="card-body-custom">
-              <div class="product-name">Taal Spark Volcanic</div>
-              <div class="product-type">Taal Lake · 500ml</div>
-              <div class="price-row">
-                <span class="price-currency">₱</span>
-                <span class="price-amount">18</span>
-                <span class="price-unit">/bottle</span>
-              </div>
-              <button class="btn btn-add-cart">
-                <i class="bi bi-cart-plus"></i> Add to Cart
-              </button>
+              <div class="product-name">Taal Spark Volcanic</div><div class="product-type">Taal Lake · 500ml</div>
+              <div class="price-row"><span class="price-currency">₱</span><span class="price-amount">18</span><span class="price-unit">/bottle</span></div>
+              <button class="btn btn-add-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
 
-        <!-- P5: Pasig Premium 1L -->
+        <!-- P5 -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card">
+          <div class="product-card card h-100">
             <div class="card-img-wrap">
-              <span class="card-badge-brand badge-pasig">Pasig Premium</span>
-              <span class="size-tag">1L</span>
-              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none">
-                <rect x="22" y="0" width="16" height="10" rx="3" fill="#15803d"/>
-                <rect x="23" y="9" width="14" height="12" rx="3" fill="#86efac"/>
-                <rect x="12" y="20" width="36" height="100" rx="10" fill="url(#g5)"/>
-                <rect x="17" y="28" width="7" height="60" rx="4" fill="rgba(255,255,255,0.3)"/>
-                <rect x="12" y="72" width="36" height="48" rx="0 0 10 10" fill="rgba(21,128,61,0.25)" clip-path="url(#c5)"/>
-                <defs>
-                  <linearGradient id="g5" x1="12" y1="20" x2="48" y2="20" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#dcfce7"/><stop offset="1" stop-color="#f0fdf4"/>
-                  </linearGradient>
-                  <clipPath id="c5"><rect x="12" y="20" width="36" height="100" rx="10"/></clipPath>
-                </defs>
-              </svg>
+              <span class="card-badge-brand badge-pasig">Pasig Premium</span><span class="size-tag">1L</span>
+              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none"><rect x="22" y="0" width="16" height="10" rx="3" fill="#15803d"/><rect x="23" y="9" width="14" height="12" rx="3" fill="#86efac"/><rect x="12" y="20" width="36" height="100" rx="10" fill="url(#g5)"/><rect x="17" y="28" width="7" height="60" rx="4" fill="rgba(255,255,255,0.3)"/><rect x="12" y="72" width="36" height="48" rx="0 0 10 10" fill="rgba(21,128,61,0.25)" clip-path="url(#c5)"/><defs><linearGradient id="g5" x1="12" y1="20" x2="48" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#dcfce7"/><stop offset="1" stop-color="#f0fdf4"/></linearGradient><clipPath id="c5"><rect x="12" y="20" width="36" height="100" rx="10"/></clipPath></defs></svg>
             </div>
             <div class="card-body-custom">
-              <div class="product-name">Pasig Premium Reserve</div>
-              <div class="product-type">Pasig River · 1L</div>
-              <div class="price-row">
-                <span class="price-currency">₱</span>
-                <span class="price-amount">22</span>
-                <span class="price-unit">/bottle</span>
-              </div>
-              <button class="btn btn-add-cart">
-                <i class="bi bi-cart-plus"></i> Add to Cart
-              </button>
+              <div class="product-name">Pasig Premium Reserve</div><div class="product-type">Pasig River · 1L</div>
+              <div class="price-row"><span class="price-currency">₱</span><span class="price-amount">22</span><span class="price-unit">/bottle</span></div>
+              <button class="btn btn-add-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
 
-        <!-- P6: Pacific Crest 1.5L -->
+        <!-- P6 -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card">
+          <div class="product-card card h-100">
             <div class="card-img-wrap">
-              <span class="card-badge-brand badge-pacific">Pacific Crest</span>
-              <span class="size-tag">1.5L</span>
-              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none">
-                <rect x="21" y="0" width="18" height="11" rx="4" fill="#1a6fb5"/>
-                <rect x="22" y="10" width="16" height="13" rx="4" fill="#5bbcff"/>
-                <rect x="9" y="22" width="42" height="100" rx="13" fill="url(#g6)"/>
-                <rect x="15" y="30" width="8" height="65" rx="4" fill="rgba(255,255,255,0.28)"/>
-                <rect x="9" y="76" width="42" height="46" rx="0 0 13 13" fill="rgba(26,111,181,0.30)" clip-path="url(#c6)"/>
-                <defs>
-                  <linearGradient id="g6" x1="9" y1="22" x2="51" y2="22" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#c8e6ff"/><stop offset="1" stop-color="#e8f5ff"/>
-                  </linearGradient>
-                  <clipPath id="c6"><rect x="9" y="22" width="42" height="100" rx="13"/></clipPath>
-                </defs>
-              </svg>
+              <span class="card-badge-brand badge-pacific">Pacific Crest</span><span class="size-tag">1.5L</span>
+              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none"><rect x="21" y="0" width="18" height="11" rx="4" fill="#1a6fb5"/><rect x="22" y="10" width="16" height="13" rx="4" fill="#5bbcff"/><rect x="9" y="22" width="42" height="100" rx="13" fill="url(#g6)"/><rect x="15" y="30" width="8" height="65" rx="4" fill="rgba(255,255,255,0.28)"/><rect x="9" y="76" width="42" height="46" rx="0 0 13 13" fill="rgba(26,111,181,0.30)" clip-path="url(#c6)"/><defs><linearGradient id="g6" x1="9" y1="22" x2="51" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#c8e6ff"/><stop offset="1" stop-color="#e8f5ff"/></linearGradient><clipPath id="c6"><rect x="9" y="22" width="42" height="100" rx="13"/></clipPath></defs></svg>
             </div>
             <div class="card-body-custom">
-              <div class="product-name">Pacific Crest Deep Blue</div>
-              <div class="product-type">Pacific Ocean · 1.5L</div>
-              <div class="price-row">
-                <span class="price-currency">₱</span>
-                <span class="price-amount">28</span>
-                <span class="price-unit">/bottle</span>
-              </div>
-              <button class="btn btn-add-cart">
-                <i class="bi bi-cart-plus"></i> Add to Cart
-              </button>
+              <div class="product-name">Pacific Crest Deep Blue</div><div class="product-type">Pacific Ocean · 1.5L</div>
+              <div class="price-row"><span class="price-currency">₱</span><span class="price-amount">28</span><span class="price-unit">/bottle</span></div>
+              <button class="btn btn-add-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
 
-        <!-- P7: Taal Spark 5L -->
+        <!-- P7 -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card">
+          <div class="product-card card h-100">
             <div class="card-img-wrap">
-              <span class="card-badge-brand badge-taal">Taal Spark</span>
-              <span class="size-tag">5L</span>
-              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none">
-                <rect x="20" y="0" width="20" height="12" rx="4" fill="#dc2626"/>
-                <rect x="21" y="11" width="18" height="14" rx="4" fill="#f87171"/>
-                <rect x="6" y="24" width="48" height="98" rx="14" fill="url(#g7)"/>
-                <rect x="13" y="32" width="9" height="65" rx="5" fill="rgba(255,255,255,0.28)"/>
-                <rect x="6" y="75" width="48" height="47" rx="0 0 14 14" fill="rgba(220,38,38,0.22)" clip-path="url(#c7)"/>
-                <defs>
-                  <linearGradient id="g7" x1="6" y1="24" x2="54" y2="24" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#ffe4e4"/><stop offset="1" stop-color="#fff5f5"/>
-                  </linearGradient>
-                  <clipPath id="c7"><rect x="6" y="24" width="48" height="98" rx="14"/></clipPath>
-                </defs>
-              </svg>
+              <span class="card-badge-brand badge-taal">Taal Spark</span><span class="size-tag">5L</span>
+              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none"><rect x="20" y="0" width="20" height="12" rx="4" fill="#dc2626"/><rect x="21" y="11" width="18" height="14" rx="4" fill="#f87171"/><rect x="6" y="24" width="48" height="98" rx="14" fill="url(#g7)"/><rect x="13" y="32" width="9" height="65" rx="5" fill="rgba(255,255,255,0.28)"/><rect x="6" y="75" width="48" height="47" rx="0 0 14 14" fill="rgba(220,38,38,0.22)" clip-path="url(#c7)"/><defs><linearGradient id="g7" x1="6" y1="24" x2="54" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe4e4"/><stop offset="1" stop-color="#fff5f5"/></linearGradient><clipPath id="c7"><rect x="6" y="24" width="48" height="98" rx="14"/></clipPath></defs></svg>
             </div>
             <div class="card-body-custom">
-              <div class="product-name">Taal Spark Magma Jug</div>
-              <div class="product-type">Taal Lake · 5L</div>
-              <div class="price-row">
-                <span class="price-currency">₱</span>
-                <span class="price-amount">56</span>
-                <span class="price-unit">/jug</span>
-              </div>
-              <button class="btn btn-add-cart">
-                <i class="bi bi-cart-plus"></i> Add to Cart
-              </button>
+              <div class="product-name">Taal Spark Magma Jug</div><div class="product-type">Taal Lake · 5L</div>
+              <div class="price-row"><span class="price-currency">₱</span><span class="price-amount">56</span><span class="price-unit">/jug</span></div>
+              <button class="btn btn-add-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
 
-        <!-- P8: Pasig Premium 5L -->
+        <!-- P8 -->
         <div class="col-6 col-md-4 col-lg-3">
-          <div class="product-card">
+          <div class="product-card card h-100">
             <div class="card-img-wrap">
-              <span class="card-badge-brand badge-pasig">Pasig Premium</span>
-              <span class="size-tag">5L</span>
-              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none">
-                <rect x="20" y="0" width="20" height="12" rx="4" fill="#15803d"/>
-                <rect x="21" y="11" width="18" height="14" rx="4" fill="#86efac"/>
-                <rect x="6" y="24" width="48" height="98" rx="14" fill="url(#g8)"/>
-                <rect x="13" y="32" width="9" height="65" rx="5" fill="rgba(255,255,255,0.28)"/>
-                <rect x="6" y="75" width="48" height="47" rx="0 0 14 14" fill="rgba(21,128,61,0.30)" clip-path="url(#c8)"/>
-                <defs>
-                  <linearGradient id="g8" x1="6" y1="24" x2="54" y2="24" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#dcfce7"/><stop offset="1" stop-color="#f0fdf4"/>
-                  </linearGradient>
-                  <clipPath id="c8"><rect x="6" y="24" width="48" height="98" rx="14"/></clipPath>
-                </defs>
-              </svg>
+              <span class="card-badge-brand badge-pasig">Pasig Premium</span><span class="size-tag">5L</span>
+              <svg class="bottle-icon" viewBox="0 0 60 130" fill="none"><rect x="20" y="0" width="20" height="12" rx="4" fill="#15803d"/><rect x="21" y="11" width="18" height="14" rx="4" fill="#86efac"/><rect x="6" y="24" width="48" height="98" rx="14" fill="url(#g8)"/><rect x="13" y="32" width="9" height="65" rx="5" fill="rgba(255,255,255,0.28)"/><rect x="6" y="75" width="48" height="47" rx="0 0 14 14" fill="rgba(21,128,61,0.30)" clip-path="url(#c8)"/><defs><linearGradient id="g8" x1="6" y1="24" x2="54" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#dcfce7"/><stop offset="1" stop-color="#f0fdf4"/></linearGradient><clipPath id="c8"><rect x="6" y="24" width="48" height="98" rx="14"/></clipPath></defs></svg>
             </div>
             <div class="card-body-custom">
-              <div class="product-name">Pasig Premium Grande</div>
-              <div class="product-type">Pasig River · 5L</div>
-              <div class="price-row">
-                <span class="price-currency">₱</span>
-                <span class="price-amount">60</span>
-                <span class="price-unit">/jug</span>
-              </div>
-              <button class="btn btn-add-cart">
-                <i class="bi bi-cart-plus"></i> Add to Cart
-              </button>
+              <div class="product-name">Pasig Premium Grande</div><div class="product-type">Pasig River · 5L</div>
+              <div class="price-row"><span class="price-currency">₱</span><span class="price-amount">60</span><span class="price-unit">/jug</span></div>
+              <button class="btn btn-add-cart"><i class="bi bi-cart-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
 
-      </div><!-- /products row -->
+      </div>
     </div>
   </section>
 
-
-  <!-- ================================================================
-       PROMO BANNER
-  ================================================================== -->
+  <!-- PROMO BANNER -->
   <section id="promo">
     <div class="container position-relative" style="z-index:1;">
       <div class="row align-items-center gy-4">
-        <div class="col-lg-8">
-          <div class="promo-text">
-            <h2>Buy 4 Bottles, Get 1 FREE 🎉</h2>
-            <p>Mix and match any brand and size. Limited time offer — valid while stocks last!</p>
-          </div>
-        </div>
-        <div class="col-lg-4 text-lg-end">
-          <a href="#products" class="btn btn-promo">
-            Grab the Deal <i class="bi bi-arrow-right ms-1"></i>
-          </a>
-        </div>
+        <div class="col-lg-8"><div class="promo-text"><h2>Buy 4 Bottles, Get 1 FREE 🎉</h2><p>Mix and match any brand and size. Limited time offer — valid while stocks last!</p></div></div>
+        <div class="col-lg-4 text-lg-end"><a href="#products" class="btn btn-promo">Grab the Deal <i class="bi bi-arrow-right ms-1"></i></a></div>
       </div>
     </div>
   </section>
 
-
-  <!-- ================================================================
-       POPULAR BRANDS
-  ================================================================== -->
+  <!-- BRANDS -->
   <section id="brands">
     <div class="container">
-
       <div class="text-center mb-5">
         <span class="section-label">Brands We Carry</span>
         <h2 class="section-title">Popular Brands</h2>
-        <p class="section-sub mx-auto">Each brand is proudly sourced from a unique and <em>completely trustworthy</em> Philippine water body. Taste the patriotism.</p>
+        <p class="section-sub mx-auto">Each brand is proudly sourced from a unique and <em>completely trustworthy</em> Philippine water body.</p>
       </div>
-
       <div class="row g-4 justify-content-center">
-
-        <!-- Pacific Crest -->
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="brand-card">
-            <div class="brand-logo-circle logo-pacific">PACIFIC</div>
-            <div class="brand-name">Pacific Crest</div>
-            <div class="brand-source"><i class="bi bi-geo-alt-fill"></i> Sourced from the Pacific Ocean</div>
-            <div class="brand-desc">Why settle for local when you can drink from the world's biggest ocean? Pacific Crest travels thousands of nautical miles so you don't have to. Bold. Vast. Slightly salty.</div>
-            <div class="brand-sizes">
-              <span class="size-pill">330ml</span>
-              <span class="size-pill">500ml</span>
-              <span class="size-pill">1L</span>
-              <span class="size-pill">5L</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- WPS Blue -->
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="brand-card">
-            <div class="brand-logo-circle logo-wps">WPS</div>
-            <div class="brand-name">WPS Blue</div>
-            <div class="brand-source"><i class="bi bi-geo-alt-fill"></i> Sourced from the West Philippines Sea</div>
-            <div class="brand-desc">A patriotic sip with every gulp. WPS Blue is bottled from waters that are ours — we said so on the label. Refreshingly sovereign. Every bottle comes with a Certificate of Territorial Integrity.</div>
-            <div class="brand-sizes">
-              <span class="size-pill">330ml</span>
-              <span class="size-pill">500ml</span>
-              <span class="size-pill">1L</span>
-              <span class="size-pill">5L</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bay Breeze -->
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="brand-card">
-            <div class="brand-logo-circle logo-manila">BAY</div>
-            <div class="brand-name">Bay Breeze</div>
-            <div class="brand-source"><i class="bi bi-geo-alt-fill"></i> Sourced from Manila Bay</div>
-            <div class="brand-desc">Inspired by the world-famous Manila Bay sunset. Bay Breeze captures that warm, golden hue in every bottle — and that's just the colour. Smell the culture. Best served with dolomite.</div>
-            <div class="brand-sizes">
-              <span class="size-pill">500ml</span>
-              <span class="size-pill">1L</span>
-              <span class="size-pill">1.5L</span>
-              <span class="size-pill">5L</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Taal Spark -->
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="brand-card">
-            <div class="brand-logo-circle logo-taal">TAAL</div>
-            <div class="brand-name">Taal Spark</div>
-            <div class="brand-source"><i class="bi bi-geo-alt-fill"></i> Sourced from Taal Lake</div>
-            <div class="brand-desc">Naturally carbonated. Volcanically tempered. Taal Spark is the only water brand that may or may not have mild tectonic activity. Our bottling plant operates on an active schedule — just like the volcano itself. Drink with excitement.</div>
-            <div class="brand-sizes">
-              <span class="size-pill">500ml</span>
-              <span class="size-pill">1L</span>
-              <span class="size-pill">1.5L</span>
-              <span class="size-pill">5L</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pasig Premium -->
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="brand-card">
-            <div class="brand-logo-circle logo-pasig">PASIG</div>
-            <div class="brand-name">Pasig Premium</div>
-            <div class="brand-source"><i class="bi bi-geo-alt-fill"></i> Sourced from Pasig River</div>
-            <div class="brand-desc">Urban. Gritty. Alive. Pasig Premium is for those who believe character is built through adversity. Our proprietary 1823-step filtration process handles everything else. What doesn't kill you makes you hydrated.</div>
-            <div class="brand-sizes">
-              <span class="size-pill">500ml</span>
-              <span class="size-pill">1L</span>
-              <span class="size-pill">1.5L</span>
-              <span class="size-pill">5L</span>
-            </div>
-          </div>
-        </div>
-
+        <div class="col-12 col-sm-6 col-lg-4"><div class="brand-card"><div class="brand-logo-circle logo-pacific">PACIFIC</div><div class="brand-name">Pacific Crest</div><div class="brand-source"><i class="bi bi-geo-alt-fill"></i> Sourced from the Pacific Ocean</div><div class="brand-desc">Why settle for local when you can drink from the world's biggest ocean? Bold. Vast. Slightly salty.</div><div class="brand-sizes"><span class="size-pill">330ml</span><span class="size-pill">500ml</span><span class="size-pill">1L</span><span class="size-pill">5L</span></div></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="brand-card"><div class="brand-logo-circle logo-wps">WPS</div><div class="brand-name">WPS Blue</div><div class="brand-source"><i class="bi bi-geo-alt-fill"></i> Sourced from the West Philippines Sea</div><div class="brand-desc">A patriotic sip with every gulp. Refreshingly sovereign. Every bottle comes with a Certificate of Territorial Integrity.</div><div class="brand-sizes"><span class="size-pill">330ml</span><span class="size-pill">500ml</span><span class="size-pill">1L</span><span class="size-pill">5L</span></div></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="brand-card"><div class="brand-logo-circle logo-manila">BAY</div><div class="brand-name">Bay Breeze</div><div class="brand-source"><i class="bi bi-geo-alt-fill"></i> Sourced from Manila Bay</div><div class="brand-desc">Captures that warm, golden Manila Bay sunset hue in every bottle. Best served with dolomite.</div><div class="brand-sizes"><span class="size-pill">500ml</span><span class="size-pill">1L</span><span class="size-pill">1.5L</span><span class="size-pill">5L</span></div></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="brand-card"><div class="brand-logo-circle logo-taal">TAAL</div><div class="brand-name">Taal Spark</div><div class="brand-source"><i class="bi bi-geo-alt-fill"></i> Sourced from Taal Lake</div><div class="brand-desc">Naturally carbonated. Volcanically tempered. The only water brand with mild tectonic activity. Drink with excitement.</div><div class="brand-sizes"><span class="size-pill">500ml</span><span class="size-pill">1L</span><span class="size-pill">1.5L</span><span class="size-pill">5L</span></div></div></div>
+        <div class="col-12 col-sm-6 col-lg-4"><div class="brand-card"><div class="brand-logo-circle logo-pasig">PASIG</div><div class="brand-name">Pasig Premium</div><div class="brand-source"><i class="bi bi-geo-alt-fill"></i> Sourced from Pasig River</div><div class="brand-desc">Urban. Gritty. Alive. Our proprietary 1823-step filtration handles everything. What doesn't kill you makes you hydrated.</div><div class="brand-sizes"><span class="size-pill">500ml</span><span class="size-pill">1L</span><span class="size-pill">1.5L</span><span class="size-pill">5L</span></div></div></div>
       </div>
     </div>
   </section>
 
-
-  <!-- ================================================================
-       FOOTER
-  ================================================================== -->
+  <!-- FOOTER -->
   <footer id="contact">
     <div class="container">
       <div class="row gy-5">
-
-        <!-- Brand col -->
         <div class="col-lg-4">
           <div class="footer-brand">Nature<span>Aqua</span> PH</div>
-          <p class="footer-desc">
-            Your trusted online store for naturally-sourced water brands in the Philippines.
-            Hydration from places you'd never expect. Fast delivery, guaranteed… character.
-          </p>
+          <p class="footer-desc">Your trusted online store for naturally-sourced water brands in the Philippines. Hydration from places you'd never expect.</p>
           <div class="d-flex gap-2">
             <a href="#" class="footer-social-btn"><i class="bi bi-facebook"></i></a>
             <a href="#" class="footer-social-btn"><i class="bi bi-instagram"></i></a>
@@ -1592,94 +689,56 @@
             <a href="#" class="footer-social-btn"><i class="bi bi-tiktok"></i></a>
           </div>
         </div>
-
-        <!-- Quick links -->
         <div class="col-6 col-lg-2">
           <div class="footer-heading">Quick Links</div>
-          <ul class="footer-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#brands">Brands</a></li>
-            <li><a href="#promo">Promos</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+          <ul class="footer-links"><li><a href="#hero">Home</a></li><li><a href="#products">Products</a></li><li><a href="#brands">Brands</a></li><li><a href="#promo">Promos</a></li><li><a href="#contact">Contact</a></li></ul>
         </div>
-
-        <!-- Brands -->
         <div class="col-6 col-lg-2">
           <div class="footer-heading">Brands</div>
-          <ul class="footer-links">
-            <li><a href="#">Pacific Crest</a></li>
-            <li><a href="#">WPS Blue</a></li>
-            <li><a href="#">Bay Breeze</a></li>
-            <li><a href="#">Taal Spark</a></li>
-            <li><a href="#">Pasig Premium</a></li>
-          </ul>
+          <ul class="footer-links"><li><a href="#">Pacific Crest</a></li><li><a href="#">WPS Blue</a></li><li><a href="#">Bay Breeze</a></li><li><a href="#">Taal Spark</a></li><li><a href="#">Pasig Premium</a></li></ul>
         </div>
-
-        <!-- Contact -->
         <div class="col-lg-4">
           <div class="footer-heading">Contact Us</div>
-          <div class="footer-contact-item">
-            <i class="bi bi-geo-alt-fill"></i>
-            <span>Male Comfort Room – 4th Floor, Water Building, Tubig City, Metro Manila 1100</span>
-          </div>
-          <div class="footer-contact-item">
-            <i class="bi bi-telephone-fill"></i>
-            <span>(02) 8888-AQUA · 0917-888-AQUA</span>
-          </div>
-          <div class="footer-contact-item">
-            <i class="bi bi-envelope-fill"></i>
-            <span>iwantwater@natureaquaph.com</span>
-          </div>
-          <div class="footer-contact-item">
-            <i class="bi bi-clock-fill"></i>
-            <span>Sun – Sat: 12:00 AM – 11:55 PM</span>
-          </div>
+          <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Male Comfort Room – 4th Floor, Water Building, Tubig City, Metro Manila 1100</span></div>
+          <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>(02) 8888-AQUA · 0917-888-AQUA</span></div>
+          <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><span>iwantwater@natureaquaph.com</span></div>
+          <div class="footer-contact-item"><i class="bi bi-clock-fill"></i><span>Sun – Sat: 12:00 AM – 11:55 PM</span></div>
         </div>
-
       </div>
-
-      <!-- Footer bottom bar -->
       <div class="footer-divider">
         <div class="row align-items-center">
-          <div class="col-md-6">
-            <p class="footer-copy mb-0">
-              © 2026 NatureAqua PH. All rights reserved.
-            </p>
-          </div>
-          <div class="col-md-6 text-md-end mt-2 mt-md-0">
-            <p class="footer-copy mb-0">
-              Made with <i class="bi bi-heart-fill text-danger" style="font-size:.7rem;"></i> in the Philippines &nbsp;·&nbsp;
-              <a href="#" style="color:inherit;text-decoration:none;">Privacy Policy</a> &nbsp;·&nbsp;
-              <a href="#" style="color:inherit;text-decoration:none;">Terms of Service</a>
-            </p>
-          </div>
+          <div class="col-md-6"><p class="footer-copy mb-0">© 2026 NatureAqua PH. All rights reserved.</p></div>
+          <div class="col-md-6 text-md-end mt-2 mt-md-0"><p class="footer-copy mb-0">Made with <i class="bi bi-heart-fill text-danger" style="font-size:.7rem;"></i> in the Philippines &nbsp;·&nbsp; <a href="#" style="color:inherit;text-decoration:none;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#" style="color:inherit;text-decoration:none;">Terms of Service</a></p></div>
         </div>
       </div>
-
     </div>
   </footer>
 
-
-  <!-- ========== Bootstrap 5 JS Bundle ========== -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- ========== Custom JS ========== -->
   <script>
-    /* ── Filter buttons ─────────────────────────────────────────── */
+    // Filter buttons
     document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', function () {
+      btn.addEventListener('click', function() {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
       });
     });
 
-    /* ── Add to Cart feedback ───────────────────────────────────── */
+    // Add to Cart feedback + counter
+    let cartCount = 0;
     document.querySelectorAll('.btn-add-cart').forEach(btn => {
-      btn.addEventListener('click', function () {
+      btn.addEventListener('click', function() {
         const original = this.innerHTML;
         this.innerHTML = '<i class="bi bi-check-circle-fill"></i> Added!';
         this.style.background = 'linear-gradient(135deg,#16a34a,#22c55e)';
+        cartCount++;
+        document.getElementById('cart-count').textContent = cartCount;
         setTimeout(() => {
           this.innerHTML = original;
+          this.style.background = '';
+        }, 1500);
+      });
+    });
+  </script>
+</body>
+</html>
