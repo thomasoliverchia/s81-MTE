@@ -64,33 +64,169 @@
     .section-sub { color: var(--text-light); font-size: 1rem; max-width: 480px; }
     section { padding: 80px 0; }
 
-    /* ── CAROUSEL SECTION ── */
+    /* ═══════════════════════════════════════════════
+       CAROUSEL — FIXED
+    ═══════════════════════════════════════════════ */
     #hero-carousel { background: var(--aqua-900); padding: 0; }
+
     .main-carousel { position: relative; }
-    .main-carousel .carousel-item { min-height: 420px; display: flex; align-items: center; }
-    .carousel-slide-inner { padding: 60px 0; }
-    .carousel-slide-inner .slide-label { font-size: .72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: block; }
-    .carousel-slide-inner h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--white); line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; }
-    .carousel-slide-inner p { color: rgba(255,255,255,.65); font-size: 1rem; line-height: 1.7; max-width: 440px; margin-bottom: 28px; }
-    .carousel-slide-inner .btn-slide { background: linear-gradient(135deg, var(--aqua-500), var(--accent)); border: none; color: var(--white); font-weight: 700; padding: 13px 30px; border-radius: 50px; font-size: .95rem; transition: var(--transition); }
-    .carousel-slide-inner .btn-slide:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,212,255,.35); color: var(--white); }
-    .carousel-visual { display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
-    .carousel-bottle { animation: bottleFloat 4s ease-in-out infinite; filter: drop-shadow(0 16px 40px rgba(0,212,255,.4)); width: 130px; }
-    .carousel-indicators [data-bs-target] { width: 10px; height: 10px; border-radius: 50%; background-color: rgba(255,255,255,.4); border: none; }
-    .carousel-indicators .active { background-color: var(--accent); }
-    .carousel-control-prev-icon, .carousel-control-next-icon { filter: none; }
-    .carousel-control-prev, .carousel-control-next { width: 48px; height: 48px; top: 50%; transform: translateY(-50%); border-radius: 50%; background: rgba(255,255,255,.10); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.15); margin: 0 12px; opacity: 1; transition: var(--transition); }
-    .carousel-control-prev:hover, .carousel-control-next:hover { background: var(--aqua-500); }
-    .slide-bg-1 { background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(26,111,181,.20) 0%, transparent 70%), linear-gradient(160deg, var(--aqua-900) 0%, #07233e 100%); }
-    .slide-bg-2 { background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(22,163,74,.15) 0%, transparent 70%), linear-gradient(160deg, #061a0e 0%, #0a1628 100%); }
-    .slide-bg-3 { background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(220,38,38,.15) 0%, transparent 70%), linear-gradient(160deg, #1a0606 0%, #0a1628 100%); }
-    .slide-bg-4 { background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(217,119,6,.15) 0%, transparent 70%), linear-gradient(160deg, #1a1006 0%, #0a1628 100%); }
+
+    /* Each slide fills a consistent height */
+    .main-carousel .carousel-item {
+      min-height: 460px;
+    }
+
+    /* Slide inner layout — uses padding so arrows never cover text */
+    .carousel-slide-inner {
+      padding: 56px 0 56px 0;
+    }
+    .carousel-slide-inner .slide-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .carousel-slide-inner h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    .carousel-slide-inner p {
+      color: rgba(255,255,255,.65);
+      font-size: .975rem;
+      line-height: 1.75;
+      max-width: 420px;
+      margin-bottom: 32px;
+    }
+    .carousel-slide-inner .btn-slide {
+      background: linear-gradient(135deg, var(--aqua-500), var(--accent));
+      border: none;
+      color: var(--white);
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-size: .9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .carousel-slide-inner .btn-slide:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,212,255,.35);
+      color: var(--white);
+    }
+
+    /* Bottle visual column */
+    .carousel-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 48px 20px;
+    }
+    .carousel-bottle {
+      animation: bottleFloat 4s ease-in-out infinite;
+      filter: drop-shadow(0 16px 40px rgba(0,212,255,.4));
+      width: 110px;
+    }
+
+    /* ── Indicators: moved above controls, clearly visible ── */
+    .carousel-indicators {
+      bottom: 18px;
+      margin-bottom: 0;
+      gap: 6px;
+    }
+    .carousel-indicators [data-bs-target] {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,.30);
+      border: none;
+      transition: all .25s ease;
+      margin: 0;
+    }
+    .carousel-indicators .active {
+      background-color: var(--accent);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* ── Arrow controls: sit OUTSIDE the text area, vertically centred ── */
+    .carousel-control-prev,
+    .carousel-control-next {
+      /* Shrink the clickable area so they hug the edge */
+      width: 52px;
+      /* Push them to the vertical centre of the slide */
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+      /* Visual pill */
+      background: rgba(255,255,255,.10);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      opacity: 1;
+      transition: background var(--transition), border-color var(--transition);
+      /* Tuck them right at the edge so they don't overlap copy */
+      margin: 0 6px;
+    }
+    .carousel-control-prev { left: 8px; }
+    .carousel-control-next { right: 8px; }
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      background: var(--aqua-500);
+      border-color: var(--aqua-500);
+    }
+
+    /* Smaller icon inside the circle */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 16px;
+      height: 16px;
+      background-size: 100%;
+    }
+
+    /* Slide background themes */
+    .slide-bg-1 { background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(26,111,181,.22) 0%, transparent 70%), linear-gradient(160deg, var(--aqua-900) 0%, #07233e 100%); }
+    .slide-bg-2 { background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(22,163,74,.16) 0%, transparent 70%), linear-gradient(160deg, #061a0e 0%, #0a1628 100%); }
+    .slide-bg-3 { background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(220,38,38,.16) 0%, transparent 70%), linear-gradient(160deg, #1a0606 0%, #0a1628 100%); }
+    .slide-bg-4 { background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(217,119,6,.16) 0%, transparent 70%), linear-gradient(160deg, #1a1006 0%, #0a1628 100%); }
+
+    /* ── Extra bottom-padding so indicators don't clip over content ── */
+    .main-carousel .carousel-item .container {
+      padding-bottom: 52px;
+    }
+
+    /* ── Mobile tweaks ── */
+    @media (max-width: 767px) {
+      .main-carousel .carousel-item { min-height: auto; }
+      .carousel-slide-inner { padding: 40px 0 20px; text-align: center; }
+      .carousel-slide-inner p { margin-left: auto; margin-right: auto; }
+      .carousel-slide-inner .btn-slide { margin: 0 auto; display: inline-flex; }
+      .carousel-visual { padding: 8px 20px 32px; }
+      .carousel-bottle { width: 80px; }
+      /* On mobile push arrows a bit further in so they don't go off-screen */
+      .carousel-control-prev { left: 4px; }
+      .carousel-control-next { right: 4px; }
+    }
 
     /* Filter buttons */
     .filter-btn { background: var(--white); border: 1.5px solid rgba(26,111,181,.18); color: var(--text-mid); font-weight: 500; font-size: .875rem; padding: 8px 20px; border-radius: 50px; cursor: pointer; transition: var(--transition); white-space: nowrap; }
     .filter-btn:hover, .filter-btn.active { background: var(--aqua-500); border-color: var(--aqua-500); color: var(--white); box-shadow: 0 4px 16px rgba(26,111,181,.25); }
 
-    /* Product cards — using Bootstrap .card with custom overrides */
+    /* Product cards */
     .product-card.card { border: 1px solid rgba(26,111,181,.09); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); transition: var(--transition); overflow: hidden; }
     .product-card.card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: rgba(26,111,181,.25); }
     .card-img-wrap { background: linear-gradient(135deg, var(--aqua-100) 0%, #e8f5ff 100%); display: flex; align-items: center; justify-content: center; padding: 32px 20px; position: relative; min-height: 200px; overflow: hidden; }
@@ -182,7 +318,6 @@
       .hero-stats { gap: 24px; } .hero-visual { height: 260px; margin-top: 40px; }
       .hero-bottle-img { width: 110px; } section { padding: 60px 0; }
       .filter-btn { font-size: .8rem; padding: 7px 14px; }
-      .main-carousel .carousel-item { min-height: auto; }
     }
   </style>
 </head>
@@ -260,10 +395,11 @@
   </section>
 
   <!-- ================================================================
-       BRAND CAROUSEL
+       BRAND CAROUSEL — FIXED
   ================================================================== -->
   <section id="hero-carousel" style="padding:0;">
     <div id="brandCarousel" class="carousel slide main-carousel" data-bs-ride="carousel" data-bs-interval="4500">
+
       <!-- Indicators -->
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#brandCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -277,14 +413,14 @@
         <!-- Slide 1: Pacific Crest -->
         <div class="carousel-item active slide-bg-1">
           <div class="container">
-            <div class="row align-items-center gy-4">
+            <div class="row align-items-center gy-0">
               <div class="col-lg-7 carousel-slide-inner">
-                <span class="slide-label"><i class="bi bi-droplet-fill me-1"></i> Pacific Crest</span>
+                <span class="slide-label"><i class="bi bi-droplet-fill"></i> Pacific Crest</span>
                 <h2>Deep Blue.<br>Straight from the Pacific.</h2>
                 <p>Why settle for ordinary when you can drink from the world's biggest ocean? Pacific Crest travels thousands of nautical miles so you don't have to. Bold. Vast. Slightly salty.</p>
-                <a href="#products" class="btn btn-slide">Shop Pacific Crest <i class="bi bi-arrow-right ms-1"></i></a>
+                <a href="#products" class="btn btn-slide">Shop Pacific Crest <i class="bi bi-arrow-right"></i></a>
               </div>
-              <div class="col-lg-5">
+              <div class="col-lg-5 d-none d-lg-flex">
                 <div class="carousel-visual">
                   <svg class="carousel-bottle" viewBox="0 0 60 130" fill="none">
                     <rect x="22" y="0" width="16" height="10" rx="3" fill="#00d4ff"/>
@@ -306,14 +442,14 @@
         <!-- Slide 2: WPS Blue -->
         <div class="carousel-item slide-bg-2">
           <div class="container">
-            <div class="row align-items-center gy-4">
+            <div class="row align-items-center gy-0">
               <div class="col-lg-7 carousel-slide-inner">
-                <span class="slide-label" style="color:#4ade80;"><i class="bi bi-flag-fill me-1"></i> WPS Blue</span>
+                <span class="slide-label" style="color:#4ade80;"><i class="bi bi-flag-fill"></i> WPS Blue</span>
                 <h2>Refreshingly<br>Sovereign.</h2>
                 <p>A patriotic sip with every gulp. Bottled from waters that are ours — we said so on the label. Every bottle comes with a Certificate of Territorial Integrity.</p>
-                <a href="#products" class="btn btn-slide" style="background:linear-gradient(135deg,#16a34a,#4ade80);">Shop WPS Blue <i class="bi bi-arrow-right ms-1"></i></a>
+                <a href="#products" class="btn btn-slide" style="background:linear-gradient(135deg,#16a34a,#4ade80);">Shop WPS Blue <i class="bi bi-arrow-right"></i></a>
               </div>
-              <div class="col-lg-5">
+              <div class="col-lg-5 d-none d-lg-flex">
                 <div class="carousel-visual">
                   <svg class="carousel-bottle" style="filter:drop-shadow(0 16px 40px rgba(74,222,128,.4));" viewBox="0 0 60 130" fill="none">
                     <rect x="22" y="0" width="16" height="10" rx="3" fill="#16a34a"/>
@@ -335,14 +471,14 @@
         <!-- Slide 3: Taal Spark -->
         <div class="carousel-item slide-bg-3">
           <div class="container">
-            <div class="row align-items-center gy-4">
+            <div class="row align-items-center gy-0">
               <div class="col-lg-7 carousel-slide-inner">
-                <span class="slide-label" style="color:#f87171;"><i class="bi bi-lightning-charge-fill me-1"></i> Taal Spark</span>
+                <span class="slide-label" style="color:#f87171;"><i class="bi bi-lightning-charge-fill"></i> Taal Spark</span>
                 <h2>Naturally Carbonated.<br>Volcanically Tempered.</h2>
                 <p>The only water brand that may or may not have mild tectonic activity. Our bottling plant operates on an active schedule — just like the volcano itself. Drink with excitement.</p>
-                <a href="#products" class="btn btn-slide" style="background:linear-gradient(135deg,#dc2626,#f87171);">Shop Taal Spark <i class="bi bi-arrow-right ms-1"></i></a>
+                <a href="#products" class="btn btn-slide" style="background:linear-gradient(135deg,#dc2626,#f87171);">Shop Taal Spark <i class="bi bi-arrow-right"></i></a>
               </div>
-              <div class="col-lg-5">
+              <div class="col-lg-5 d-none d-lg-flex">
                 <div class="carousel-visual">
                   <svg class="carousel-bottle" style="filter:drop-shadow(0 16px 40px rgba(248,113,113,.4));" viewBox="0 0 60 130" fill="none">
                     <rect x="22" y="0" width="16" height="10" rx="3" fill="#dc2626"/>
@@ -364,14 +500,14 @@
         <!-- Slide 4: Bay Breeze -->
         <div class="carousel-item slide-bg-4">
           <div class="container">
-            <div class="row align-items-center gy-4">
+            <div class="row align-items-center gy-0">
               <div class="col-lg-7 carousel-slide-inner">
-                <span class="slide-label" style="color:#fbbf24;"><i class="bi bi-sunset-fill me-1"></i> Bay Breeze</span>
+                <span class="slide-label" style="color:#fbbf24;"><i class="bi bi-sunset-fill"></i> Bay Breeze</span>
                 <h2>Taste the Sunset.<br>Smell the Culture.</h2>
                 <p>Inspired by the world-famous Manila Bay sunset. Bay Breeze captures that warm, golden hue in every bottle. Best served with dolomite sand and existential reflection.</p>
-                <a href="#products" class="btn btn-slide" style="background:linear-gradient(135deg,#d97706,#fbbf24);color:#1a0a00;">Shop Bay Breeze <i class="bi bi-arrow-right ms-1"></i></a>
+                <a href="#products" class="btn btn-slide" style="background:linear-gradient(135deg,#d97706,#fbbf24);color:#1a0a00;">Shop Bay Breeze <i class="bi bi-arrow-right"></i></a>
               </div>
-              <div class="col-lg-5">
+              <div class="col-lg-5 d-none d-lg-flex">
                 <div class="carousel-visual">
                   <svg class="carousel-bottle" style="filter:drop-shadow(0 16px 40px rgba(251,191,36,.4));" viewBox="0 0 60 130" fill="none">
                     <rect x="22" y="0" width="16" height="10" rx="3" fill="#d97706"/>
@@ -401,6 +537,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
+
     </div>
   </section>
 
@@ -427,8 +564,6 @@
         </div>
       </div>
       <div class="row g-4">
-
-        <!-- Featured Card 1 -->
         <div class="col-sm-6 col-lg-3">
           <div class="product-card card h-100">
             <div class="card-img-wrap">
@@ -444,8 +579,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Featured Card 2 -->
         <div class="col-sm-6 col-lg-3">
           <div class="product-card card h-100">
             <div class="card-img-wrap">
@@ -461,8 +594,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Featured Card 3 -->
         <div class="col-sm-6 col-lg-3">
           <div class="product-card card h-100">
             <div class="card-img-wrap">
@@ -478,8 +609,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Featured Card 4 -->
         <div class="col-sm-6 col-lg-3">
           <div class="product-card card h-100">
             <div class="card-img-wrap">
@@ -495,7 +624,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -522,8 +650,6 @@
         <button class="filter-btn">5L</button>
       </div>
       <div class="row g-4">
-
-        <!-- P1 -->
         <div class="col-6 col-md-4 col-lg-3">
           <div class="product-card card h-100">
             <div class="card-img-wrap">
@@ -537,8 +663,6 @@
             </div>
           </div>
         </div>
-
-        <!-- P2 -->
         <div class="col-6 col-md-4 col-lg-3">
           <div class="product-card card h-100">
             <div class="card-img-wrap">
@@ -552,8 +676,6 @@
             </div>
           </div>
         </div>
-
-        <!-- P3 -->
         <div class="col-6 col-md-4 col-lg-3">
           <div class="product-card card h-100">
             <div class="card-img-wrap">
@@ -567,8 +689,6 @@
             </div>
           </div>
         </div>
-
-        <!-- P4 -->
         <div class="col-6 col-md-4 col-lg-3">
           <div class="product-card card h-100">
             <div class="card-img-wrap">
@@ -582,8 +702,6 @@
             </div>
           </div>
         </div>
-
-        <!-- P5 -->
         <div class="col-6 col-md-4 col-lg-3">
           <div class="product-card card h-100">
             <div class="card-img-wrap">
@@ -597,8 +715,6 @@
             </div>
           </div>
         </div>
-
-        <!-- P6 -->
         <div class="col-6 col-md-4 col-lg-3">
           <div class="product-card card h-100">
             <div class="card-img-wrap">
@@ -612,8 +728,6 @@
             </div>
           </div>
         </div>
-
-        <!-- P7 -->
         <div class="col-6 col-md-4 col-lg-3">
           <div class="product-card card h-100">
             <div class="card-img-wrap">
@@ -627,8 +741,6 @@
             </div>
           </div>
         </div>
-
-        <!-- P8 -->
         <div class="col-6 col-md-4 col-lg-3">
           <div class="product-card card h-100">
             <div class="card-img-wrap">
@@ -642,7 +754,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -716,7 +827,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Filter buttons
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', function() {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -724,7 +834,6 @@
       });
     });
 
-    // Add to Cart feedback + counter
     let cartCount = 0;
     document.querySelectorAll('.btn-add-cart').forEach(btn => {
       btn.addEventListener('click', function() {
